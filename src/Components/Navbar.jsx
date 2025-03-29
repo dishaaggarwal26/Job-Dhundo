@@ -1,22 +1,21 @@
 import React, { useState } from 'react'
-import {Link} from 'react-scroll'
+import {Link} from 'react-router-dom'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
-
 const Navbar = () => {
     const  [click,setclick]=useState(false);
     const handle=()=> setclick(!click);
     const content=<>
-    <div className='lg:hidden block absolute top-16 w-full ring-fuchsia-300 left-0 right-0 bg-blue-700'>
+    <div className='lg:hidden block absolute top-16 w-full left-0 right-0 opacity-90 bg-lime-200 cursor-pointer '>
       
-            <ul className='text-center text-xl'>
-            <Link to="Home" smooth={true} spy={true}><li>Home</li></Link>
+            <ul className='flex flex-col gap-2.5 justify-evenly items-center text-xl font-semibold  text-black '>
+            <Link to="/Home" smooth={true} spy={true}><li className='hover:underline'>Home</li></Link>
 
-<Link to="Job" smooth={true} spy={true}><li>Job</li></Link>
-<Link to="Blog Post" smooth={true} spy={true}><li>Blog Post</li></Link>
-<Link to="Company" smooth={true} spy={true}><li>Company</li></Link>
-<Link to="Notifications" smooth={true} spy={true}><li>Notifications</li></Link>
-<Link to="Support" smooth={true} spy={true}><li>Support</li></Link>
+<Link to="Job" smooth={true} spy={true}><li className='hover:underline'>Job</li></Link>
+<Link to="Blog Post" smooth={true} spy={true}><li className='hover:underline'>Blog Post</li></Link>
+<Link to="Company" smooth={true} spy={true}><li className='hover:underline'>Company</li></Link>
+<Link to="Notifications" smooth={true} spy={true}><li className='hover:underline'>Notifications</li></Link>
+<Link to="Support" smooth={true} spy={true}><li className='hover:underline'>Support</li></Link>
 
 <Link to="Profile" smooth={true} spy={true}>
         <li className='text-center ml-60'><img className='w-5 rounded-full border-1' src="https://th.bing.com/th/id/OIP.FlFbGc_ui_bVLHN3TfGsxQHaHa?rs=1&pid=ImgDetMain" alt="profile" srcset="" /></li>
@@ -34,7 +33,7 @@ const Navbar = () => {
         </a>
         <div className='lg:flex md:flex lg:flex-1  justify-evenly  items-center font-normal hidden'>
         <div><ul className=' flex text-cyan-950 space-x-7 text-xl font-bold font-mono'>
-        <Link spy={true}  smooth={true} to='Home'><li className='hover:underline'>Home</li></Link>
+        <Link spy={true}  smooth={true} to='/Home'><li className='hover:underline'>Home</li></Link>
 
           <Link spy={true}  smooth={true} to='Job'><li className='hover:underline'>Job</li></Link>
         <Link spy={true}  smooth={true} to='Blog Post'><li className='hover:underline'>Blog-Post</li></Link>
@@ -45,8 +44,8 @@ const Navbar = () => {
         </ul>
         </div>
 
-        <div  ><ul className='flex text-center gap-3'><li className='text-xl bg-amber-200 w-30 
-         h-10 font-bold py-1   rounded-2xl  border-2  text-blue-400'>Login</li>
+        <div  ><ul className='flex text-center gap-3'><li className='text-xl bg-amber-200 w-50 
+         h-10 font-bold py-1   rounded-2xl  border-2  text-blue-400'><Link to="/Login">Login/Signup</Link></li>
         <li><img className='w-10  rounded-full border-1' src="https://th.bing.com/th/id/OIP.FlFbGc_ui_bVLHN3TfGsxQHaHa?rs=1&pid=ImgDetMain" alt="profile" srcset="" /></li></ul>
         </div>
       </div>  
@@ -55,8 +54,8 @@ const Navbar = () => {
         </div>
         <button className='block sm:hidden transition' onClick={handle}>{click?<ImCross/>:<GiHamburgerMenu/>}</button>
       </nav>
-
-    </div>
+  
+            </div>
   )
 }
 
