@@ -175,8 +175,7 @@ const Signup = () => {
             {/* Forgot Password (Only for Login) */}
             {action === "Login" && (
               <div className="forgot-password">
-                {" "}
-                Lost Password? <span>Click Here!</span>
+                Lost Password?{" "}<span><a href="/lost-password" className="hover:underline">Click Here!</a></span>
               </div>
             )}
 
