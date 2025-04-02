@@ -26,7 +26,7 @@ const Navbar = () => {
             </div></>
   return (
     <div className='sticky top-0 opacity-80'>
-        <nav  className=' bg-lime-200 justify-between  flex p-3 cursor-pointer   bg-white-400 items-center'>
+        <nav  className=' bg-gray-300 justify-between  flex p-3 cursor-pointer   bg-white-400 items-center'>
         <a href="#" id="logo" className='flex gap-2 items-center'>
          <img className='max-w-12 max-h-12 rounded-full object-cover' src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQumBDVsn-16viIQ9pFnRB2awDWgjZ87c57xQ&s"alt="logo"  />
        <span className='text-lg font-medium '>Job Dhundo</span>
