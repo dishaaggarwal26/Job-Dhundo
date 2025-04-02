@@ -11,8 +11,8 @@ const Home = () => {
       <div>
         <div className='flex-col text-center  items-center'>
           <div className='text-4xl mt-25 md:text-6xl text-yellow-500 font-bold'>Find Your <span className=' text-6xl mt-10 md:text-7xl fill-pink-900 font-extrabold text-pink-700'>Dream <br /> Job </span> Here! </div>
-          <div className=' text-10px mt-10 text-amber-950 font-bold'>Job dhundo is india bet job finding platform which is <br />easy to use,require just your resume to find the best fit for you.</div>
-          <div className=' w-110  px-2.5 m-3 flex h-15 mt-20 bg-amber-50 shadow-xl   items-center justify-center rounded-xl   border-1 md:ml-60 md:w-200  '><MdOutlineContentPasteSearch className=' text-5xl md:text-3xl text-gray-900 ' /><input type="text" placeholder="eg. frondend developer " className=" border-0 text-center text-xl md:w-130  h-10 md:text-2xl p-4" />
+          <div className=' text-10px mt-10 text-amber-950 font-bold'>Job dhundo is india best job finding platform which is <br />easy to use,require just your resume to find the best fit for you.</div>
+          <div className=' w-110  px-2.5 m-3 flex h-15 mt-20 bg-amber-50 shadow-xl   items-center justify-center rounded-xl   border-1 md:ml-60 md:w-200  '><MdOutlineContentPasteSearch className=' text-5xl md:text-3xl text-gray-900 ' /><input type="text" placeholder="eg. frontend developer " className=" border-0 text-center text-xl md:w-130  h-10 md:text-2xl p-4" />
             <button className='text-xl w-50 
          h-9 mr-0.5  font-bold rounded-xl bg-green-200 border-2  text-black-300'>
               Search</button></div>
