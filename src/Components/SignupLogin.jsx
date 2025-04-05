@@ -82,7 +82,7 @@ const SignupLogin = () => {
             if (isJobSeeker) {
               navigate("/Job");
             } else {
-              navigate("/Company");
+              navigate("/job-post");
             }
           }, 1000);
         }

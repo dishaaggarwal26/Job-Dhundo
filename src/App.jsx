@@ -4,6 +4,9 @@ import  SignupLogin  from "./Components/SignupLogin";
 import LostPassword from "./Components/LostPassword"
 
 import {  Route, Routes } from "react-router-dom";
+import Job_Post from './Components/JobPost';
+
+
 const App = () => {
   return (
     <div>
@@ -14,6 +17,8 @@ const App = () => {
                       <Route path="/Home" element={<Home/>} />
                       <Route path="/Login" element={<SignupLogin />} />
                       <Route path="/lost-password" element={<LostPassword />}/>
+                      <Route path="/job-post" element={<Job_Post/>} />
+                      
                   </Routes>
     </div>
   )
