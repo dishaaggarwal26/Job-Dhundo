@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+ .title_logo{ border-radius: 50%;
+  object-fit: cover;
+  width: 32px; 
+  height: 32px;
+  
+ }
