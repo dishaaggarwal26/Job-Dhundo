@@ -35,7 +35,7 @@ const Navbar = () => {
         <div><ul className=' flex text-cyan-950 space-x-7 text-xl font-bold font-mono'>
         <Link spy={true}  smooth={true} to='/Home'><li className='hover:underline'>Home</li></Link>
 
-          <Link spy={true}  smooth={true} to='Job'><li className='hover:underline'>Job</li></Link>
+          <Link spy={true}  smooth={true} to='/Job'><li className='hover:underline'>Job</li></Link>
         <Link spy={true}  smooth={true} to='Blog Post'><li className='hover:underline'>Blog-Post</li></Link>
        <Link spy={true} smooth={true}  to='Company'> <li className='hover:underline'>Company</li></Link>
      <Link  spy={true} smooth={true} to='Notification'> <li className='hover:underline'>Notification</li></Link>  

@@ -7,11 +7,7 @@ import { FaYoutube } from "react-icons/fa";
 const Footer = () => {
   return (
     <div>
-      <div className='h-60 md:flex mt-20  opacity-90 justify-evenly md:h-40  items-center bg-violet-900'>
-        <p className='text-4xl mt-10  w-100 md:text-5xl md:w-150 mb-10 text-amber-50 font-bold '>
-          Subscribe to recieve future updates!</p>
-        <input className='  w-100  md:mt-5  bg-gray-400 p-3 opacity-80 rounded-xl  text-black text-2xl md:mr-20 md:w-150 h-15' type="email" placeholder="Enter Your Email Address" id="" />
-        <button className='mt-2 md:cursor-pointer bg-blue-500  h-10 rounded-xl px-3 text-amber-50 text-xl md:mr-30'>Subscribe</button></div>
+  
       <div className='flex flex-col  items-center  gap-10 mt-30   bg-pink-100 justify-evenly  md:flex-row    '>
         <div className='flex-col '>
           <div><img className='max-w-20 mt-5 max-h-20 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQumBDVsn-16viIQ9pFnRB2awDWgjZ87c57xQ&s" alt="" srcset="" /><h1 className='font-bold text-2xl '>Job Dhundo</h1></div>
