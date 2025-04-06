@@ -11,8 +11,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@mantine/core": "^7.17.3",
     "@mantine/hooks": "^7.17.3",
+=======
+>>>>>>> ad182f414dec03c87ddf4df1ec41a2b63a63efdb
     "@tabler/icons-react": "^3.31.0",
     "@tailwindcss/vite": "^4.0.15",
     "@types/react-router-dom": "^5.3.3",
@@ -32,10 +35,13 @@
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.1",
     "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.21",
     "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.1",
     "vite": "^6.2.0"
   }
 }

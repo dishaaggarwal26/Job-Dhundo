@@ -4,7 +4,7 @@ const LostPassword = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState('');  
 
   // Email Validation Function
   const isValidEmail = (email) => {
