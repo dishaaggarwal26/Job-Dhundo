@@ -22,7 +22,7 @@ const CertiCard = () => {
             <img className='h-8' src="https://www.logo.wine/a/logo/Microsoft_Store/Microsoft_Store-Logo.wine.svg" alt='' />
           </div>
           <div className='flex flex-col'>
-            <div className='font-semibold'>Google Cloud Certification</div>
+            <div className='font-semibold'>Web Development Fundamentals</div>
             <div className='text-gray-600'>Microsoft </div>
           </div>
         </div>
