@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import ".././SignupLogin.css";
-import user_icon from '../Assets/person.png';
-import email_icon from '../Assets/email.png';
-import password_icon from '../Assets/password.png';
+import user_icon from "../Assets/person.png";
+import email_icon from "../Assets/email.png";
+import password_icon from "../Assets/password.png";
 import authenticate_img from "../Assets/authenti_svg.jpg";
 import { signup, login } from "../api";
 import { Link, useNavigate } from "react-router-dom";
 
 const SignupLogin = () => {
+  const fullNameRef = useRef(null);
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
+  const confirmPasswordRef = useRef(null);
+
   const [action, setAction] = useState("Sign Up");
   const [formData, setFormData] = useState({
     fullName: "",
@@ -19,6 +24,8 @@ const SignupLogin = () => {
 
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState("");
+  const [generalError, setGeneralError] = useState("");
+
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -31,75 +38,96 @@ const SignupLogin = () => {
   };
 
   const isValidPassword = (password) => {
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+    const passwordRegex =
+      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
     return passwordRegex.test(password);
   };
 
   const validateForm = () => {
     let newErrors = {};
+    let focusField = null;
     if (action === "Sign Up") {
-      if (!formData.fullName.trim())
-        newErrors.fullName = "Full Name is required";
-      if (formData.password !== formData.confirmPassword)
+      const nameParts = formData.fullName.trim().split(" ");
+      if (nameParts.length < 2) {
+        newErrors.fullName = "Please enter your full name (first and last)";
+        focusField = fullNameRef;
+      }
+      if (formData.password !== formData.confirmPassword) {
         newErrors.confirmPassword = "Passwords do not match";
+        if (!focusField) focusField = confirmPasswordRef;
+      }
     }
 
-    if (!isValidEmail(formData.email))
+    if (!isValidEmail(formData.email)) {
       newErrors.email = "Invalid email format";
-    if (!isValidPassword(formData.password))
-      newErrors.password = "Password must be at least 6 characters, include one letter, one number, and one special character.";
+      if (!focusField) focusField = emailRef;
+    }
+    if (!isValidPassword(formData.password)) {
+      newErrors.password =
+        "Password must be at least 6 characters, include one letter, one number, and one special character.";
+      if (!focusField) focusField = passwordRef;
+    }
 
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    return { isValid: Object.keys(newErrors).length === 0, focusField };
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validateForm()) {
-      try {
-        if (action === "Sign Up") {
-          const response = await signup({
-            fullName: formData.fullName,
-            email: formData.email,
-            password: formData.password,
-            confirmPassword: formData.confirmPassword,
-            isJobSeeker: formData.userType === "Job Seeker",
-          });
-          console.log("Signup Response:", response.data);
-          setSuccessMessage("Signup successful!");
-        } else {
-          const response = await login({
-            email: formData.email,
-            password: formData.password,
-          });
-          console.log("Login Response:", response.data);
-          setSuccessMessage("Login successful!");
+    const { isValid, focusField } = validateForm();
 
-          const isJobSeeker = response.data.isJobSeeker;
-
-          setTimeout(() => {
-            if (isJobSeeker) {
-              navigate("/Job");
-            } else {
-              navigate("/job-post");
-            }
-          }, 1000);
-        }
-
-        setFormData({
-          fullName: "",
-          email: "",
-          userType: "Job Seeker",
-          password: "",
-          confirmPassword: "",
-        });
-        setErrors({});
-      } catch (error) {
-        console.error("API Error:", error.response?.data);
-        setSuccessMessage(
-          "Error: " + (error.response?.data || "Something went wrong")
-        );
+    if (!isValid) {
+      if (focusField && focusField.current) {
+        focusField.current.focus();
       }
+      return;
+    }
+    try {
+      if (action === "Sign Up") {
+        const response = await signup({
+          fullName: formData.fullName,
+          email: formData.email,
+          password: formData.password,
+          confirmPassword: formData.confirmPassword,
+          isJobSeeker: formData.userType === "Job Seeker",
+        });
+        console.log("Signup Response:", response.data);
+        setSuccessMessage("Signup successful!");
+        setGeneralError(""); //clear any previous error
+      } else {
+        const response = await login({
+          email: formData.email,
+          password: formData.password,
+        });
+        console.log("Login Response:", response.data);
+        setSuccessMessage("Login successful!");
+        setGeneralError(""); //clear any previous error
+
+        const isJobSeeker = response.data.isJobSeeker;
+
+        setTimeout(() => {
+          if (isJobSeeker) {
+            navigate("/Job");
+          } else {
+            navigate("/job-post");
+          }
+        }, 1000);
+      }
+
+      setFormData({
+        fullName: "",
+        email: "",
+        userType: "Job Seeker",
+        password: "",
+        confirmPassword: "",
+      });
+      setErrors({});
+    } catch (error) {
+      console.error("API Error:", error.response?.data);
+      setGeneralError(
+        "Error: " + (error.response?.data || "Something went wrong")
+      );
+      setSuccessMessage(""); //clear success if any
     }
   };
 
@@ -118,20 +146,23 @@ const SignupLogin = () => {
           {successMessage && (
             <p className="success-message">{successMessage}</p>
           )}
-
+          {generalError && <p className="error-message">{generalError}</p>}
           <form onSubmit={handleSubmit}>
             {action === "Sign Up" && (
-              <div className="form-group">
-                <img src={user_icon} alt="User Icon" className="input-icon" />
-                <input
-                  type="text"
-                  name="fullName"
-                  placeholder="Full Name"
-                  value={formData.fullName}
-                  onChange={handleChange}
-                />
+              <>
+                <div className="form-group">
+                  <img src={user_icon} alt="User Icon" className="input-icon" />
+                  <input
+                    type="text"
+                    name="fullName"
+                    placeholder="Full Name"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    ref={fullNameRef}
+                  />
+                </div>
                 {errors.fullName && <p className="error">{errors.fullName}</p>}
-              </div>
+              </>
             )}
 
             <div className="form-group">
@@ -142,9 +173,10 @@ const SignupLogin = () => {
                 placeholder="Email"
                 value={formData.email}
                 onChange={handleChange}
+                ref={emailRef}
               />
-              {errors.email && <p className="error">{errors.email}</p>}
             </div>
+            {errors.email && <p className="error">{errors.email}</p>}
 
             <div className="form-group">
               <img
@@ -158,28 +190,32 @@ const SignupLogin = () => {
                 placeholder="Password"
                 value={formData.password}
                 onChange={handleChange}
+                ref={passwordRef}
               />
-              {errors.password && <p className="error">{errors.password}</p>}
             </div>
+            {errors.password && <p className="error">{errors.password}</p>}
 
             {action === "Sign Up" && (
-              <div className="form-group">
-                <img
-                  src={password_icon}
-                  alt="Confirm Password Icon"
-                  className="input-icon"
-                />
-                <input
-                  type="password"
-                  name="confirmPassword"
-                  placeholder="Confirm Password"
-                  value={formData.confirmPassword}
-                  onChange={handleChange}
-                />
+              <>
+                <div className="form-group">
+                  <img
+                    src={password_icon}
+                    alt="Confirm Password Icon"
+                    className="input-icon"
+                  />
+                  <input
+                    type="password"
+                    name="confirmPassword"
+                    placeholder="Confirm Password"
+                    value={formData.confirmPassword}
+                    onChange={handleChange}
+                    ref={confirmPasswordRef}
+                  />
+                </div>
                 {errors.confirmPassword && (
                   <p className="error">{errors.confirmPassword}</p>
                 )}
-              </div>
+              </>
             )}
 
             {action === "Login" && (
@@ -194,7 +230,11 @@ const SignupLogin = () => {
             )}
 
             {/* Submit Button */}
-            <button type="submit" className="signup-button">
+            <button
+              type="submit"
+              className="signup-button"
+              disabled={action === "Sign Up" && !formData.fullName.trim()}
+            >
               {action}
             </button>
 
@@ -202,9 +242,12 @@ const SignupLogin = () => {
             <button
               type="button"
               className="signup-button"
-              onClick={() =>
-                setAction(action === "Sign Up" ? "Login" : "Sign Up")
-              }
+              onClick={() => {
+                setAction(action === "Sign Up" ? "Login" : "Sign Up");
+                setErrors({}); // clear errors on mode switch
+                setSuccessMessage("");
+                setGeneralError("");
+              }}
             >
               {action === "Sign Up" ? "Login" : "Sign Up"}
             </button>
