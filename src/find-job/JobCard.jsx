@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../data.js'
 const JobCard = ({job}) => {
+
+
   return (
     <div className='border p-6 shadow rounded'>
       <div className='flex justify-between items-center'> 
