@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Navbar from "./Navbar";
 import { Link, useNavigate } from "react-router-dom";
 import profilePic from "../Assets/avatar.jpg"
 import { FaMapMarkerAlt } from "react-icons/fa";
@@ -11,11 +10,10 @@ import Footer from './Footer';
 
 const Profile = () => {
     return (
-    <div className="min-h-screen bg-gray-200  absolute">
-      <Navbar /> 
-      <div className='w-4/5 mx-auto '>
+            <div >
+      <div className='w-full  md:w-3/5 lg:w-4/5  mx-auto mt-15'>
         <div className='relative'>
-          <img className='h-65 w-300 mt-2 ml-4 rounded-t-2xl'
+          <img className='h-65 w-300 mt-2  rounded-t-2xl md:ml-4 '
             src='https://t3.ftcdn.net/jpg/03/16/91/28/360_F_316912806_RCeHVmUx5LuBMi7MKYTY5arkE4I0DcpU.jpg'
 
             alt='Technology Banner' />
@@ -37,7 +35,13 @@ const Profile = () => {
 
         <div className='px-8 ' >
           <div className='text-2xl font-bold mb-3'> About</div>
-          <div className='text-m text-justify'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia enim odit, sunt a reiciendis voluptatibus, libero quasi repellat, excepturi ipsa ad beatae ipsam laboriosam? Veritatis eos facere nobis sapiente commodi? Repudiandae error sapiente maxime quasi, nam ut labore architecto corrupti consectetur esse, aperiam sed perspiciatis suscipit reiciendis explicabo modi officia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, fugit perferendis assumenda, deleniti illo, ipsam quam quis eius nemo omnis deserunt ipsum temporibus ullam rem nihil laboriosam aliquam placeat animi.</div>
+          <div className='text-m text-justify'>Lorem ipsum dolor sit amet, consectetur 
+            adipisicing elit. Mollitia enim odit, sunt a reiciendis voluptatibus, libero quasi repellat, 
+            excepturi ipsa ad beatae ipsam laboriosam? Veritatis eos facere nobis sapiente commodi?
+             Repudiandae error sapiente maxime quasi, nam ut labore architecto corrupti consectetur 
+             esse, aperiam sed perspiciatis suscipit reiciendis explicabo modi officia. Lorem ipsum dolor 
+             sit amet consectetur adipisicing elit. Officia, fugit perferendis assumenda, deleniti illo,
+              ipsam quam quis eius nemo omnis deserunt ipsum temporibus ullam rem nihil laboriosam aliquam placeat animi.</div>
         </div>
         <hr className="ml-5 my-5 border-gray-400" />
 
@@ -69,8 +73,8 @@ const Profile = () => {
         </div>
         
       </div>
-      <Footer/>
-    </div>
+    
+   </div>
   )
 }
 

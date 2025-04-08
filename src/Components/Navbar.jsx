@@ -16,7 +16,7 @@ const Navbar = () => {
 
         <Link to="Job" smooth={true} spy={true}><li className='hover:underline'>Job</li></Link>
         <Link to="Blog Post" smooth={true} spy={true}><li className='hover:underline'>Blog Post</li></Link>
-        <Link to="Company" smooth={true} spy={true}><li className='hover:underline'>Company</li></Link>
+        <Link to="/Company" smooth={true} spy={true}><li className='hover:underline'>Company</li></Link>
         <Link to="Notifications" smooth={true} spy={true}><li className='hover:underline'>Notifications</li></Link>
         <Link to="Support" smooth={true} spy={true}><li className='hover:underline'>Support</li></Link>
 
@@ -38,19 +38,11 @@ const Navbar = () => {
           <div><ul className=' flex text-cyan-950 space-x-7 text-xl font-bold font-mono'>
             <Link spy={true} smooth={true} to='/Home'><li className='hover:underline'>Home</li></Link>
 
-<<<<<<< HEAD
-          <Link spy={true}  smooth={true} to='/Job'><li className='hover:underline'>Job</li></Link>
-        <Link spy={true}  smooth={true} to='Blog Post'><li className='hover:underline'>Blog-Post</li></Link>
-       <Link spy={true} smooth={true}  to='Company'> <li className='hover:underline'>Company</li></Link>
-     <Link  spy={true} smooth={true} to='Notification'> <li className='hover:underline'>Notification</li></Link>  
-     <Link spy={true}  smooth={true} to='Support'><li className='hover:underline'>Support</li></Link>
-=======
             <Link spy={true} smooth={true} to='Job'><li className='hover:underline'>Job</li></Link>
             <Link spy={true} smooth={true} to='Blog Post'><li className='hover:underline'>Blog-Post</li></Link>
             <Link spy={true} smooth={true} to='Company'> <li className='hover:underline'>Company</li></Link>
             <Link spy={true} smooth={true} to='Notification'> <li className='hover:underline'>Notification</li></Link>
             <Link spy={true} smooth={true} to='Support'><li className='hover:underline'>Support</li></Link>
->>>>>>> ad182f414dec03c87ddf4df1ec41a2b63a63efdb
 
           </ul>
           </div>

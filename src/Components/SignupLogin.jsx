@@ -81,7 +81,7 @@ const SignupLogin = () => {
             if (isJobSeeker) {
               navigate("/Job");
             } else {
-              navigate("/Company");
+              navigate("/job-post");
             }
           }, 1000);
         }
@@ -105,7 +105,6 @@ const SignupLogin = () => {
 
   return (
     <div>
-      <Navbar />
       <div className="mb-20 mt-20 flex justify-evenly items-center">
         <div>
           <img

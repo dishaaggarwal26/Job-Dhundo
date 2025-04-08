@@ -83,14 +83,14 @@ const matchlocation=job=>SearchFilter.location==="" || job.location.toLowerCase(
         <div className={showfilter?" ":"max-lg:hidden"}>         
                <h4 className='font-medium text-lg py-4'>Search By Location</h4>
             <ul className='space-y-4 text-gray-600'>
-                { JobLocations.map((category,index)=>
+                { JobLocations.map((location,index)=>
                 <li  key={index}>
-                    <input 
+                    <input    className='scale-125 mr-2 ' 
+                       type="checkbox" 
                      onChange={()=>handlelocation(location)} 
                     checked={select.includes(location) } 
-                    className='scale-125 mr-2 ' 
-                    type="checkbox"  />
-                    {category}
+                />
+                    {location}
                 </li>
                 )}
             </ul>
@@ -110,10 +110,10 @@ const matchlocation=job=>SearchFilter.location==="" || job.location.toLowerCase(
 
 
 
-            {jobs.length>0&&(
+            {filterjob.length>0&&(
                 <div className=' mt-4 flex justify-center items-center space-x-2'> 
                     <a href="#job-list">
-<MdOutlineKeyboardArrowLeft  onClick={()=> setcurrentpage(Math.min(currentpage+1),1)}/>
+<MdOutlineKeyboardArrowLeft  onClick={()=> setcurrentpage(Math.max(currentpage-1),1)}/>
                     </a>
                     {Array.from({length:Math.ceil(filterjob.length/6)}).map((_,index)=>(
                         <a href="#job-list">
