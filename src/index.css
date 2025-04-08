@@ -2,15 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
 
-<<<<<<< HEAD
+
 *{
     font-family: Outfit;
 }
-=======
- .title_logo{ border-radius: 50%;
-  object-fit: cover;
-  width: 32px; 
-  height: 32px;
-  
- }
->>>>>>> ad182f414dec03c87ddf4df1ec41a2b63a63efdb
