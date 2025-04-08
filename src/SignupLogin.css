@@ -81,13 +81,20 @@ input {
 }
 
 .error {
-  color: rgb(89, 24, 24);
+  color: rgb(86, 30, 30);
   font-size: 15px;
+  margin: 5px 0 10px 5px;
 }
 
 .success-message {
   color: green;
   font-weight: bold;
+  margin-bottom:10px;
+}
+.error-message{
+  color: rgb(120, 62, 62);
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .forgot-password {
