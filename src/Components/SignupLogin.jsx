@@ -3,7 +3,6 @@ import ".././SignupLogin.css";
 import user_icon from '../Assets/person.png';
 import email_icon from '../Assets/email.png';
 import password_icon from '../Assets/password.png';
-import Navbar from "./Navbar";
 import authenticate_img from "../Assets/authenti_svg.jpg";
 import { signup, login } from "../api";
 import { Link, useNavigate } from "react-router-dom";
