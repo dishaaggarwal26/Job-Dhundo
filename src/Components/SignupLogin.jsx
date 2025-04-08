@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import ".././SignupLogin.css";
-import user_icon from "../Assets/person.png";
-import email_icon from "../Assets/email.png";
-import password_icon from "../Assets/password.png";
+import user_icon from '../Assets/person.png';
+import email_icon from '../Assets/email.png';
+import password_icon from '../Assets/password.png';
 import authenticate_img from "../Assets/authenti_svg.jpg";
-import Navbar from "./Navbar";
 import { signup, login } from "../api";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -106,7 +105,6 @@ const SignupLogin = () => {
 
   return (
     <div>
-      <Navbar />
       <div className="mb-20 mt-20 flex justify-evenly items-center">
         <div>
           <img
