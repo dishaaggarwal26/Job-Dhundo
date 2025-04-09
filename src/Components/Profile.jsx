@@ -6,12 +6,12 @@ import { PiBriefcaseBold } from "react-icons/pi";
 import { LuPencil } from "react-icons/lu";
 import ExpCard from './ExpCard';
 import CertiCard from './CertiCard';
-import Footer from './Footer';
+
 
 const Profile = () => {
     return (
             <div >
-      <div className='w-full  md:w-3/5 lg:w-4/5  mx-auto mt-15'>
+      <div className='w-full  md:w-3/5 lg:w-4/5 mx-auto mt-15'> 
         <div className='relative'>
           <img className='h-65 w-300 mt-2  rounded-t-2xl md:ml-4 '
             src='https://t3.ftcdn.net/jpg/03/16/91/28/360_F_316912806_RCeHVmUx5LuBMi7MKYTY5arkE4I0DcpU.jpg'

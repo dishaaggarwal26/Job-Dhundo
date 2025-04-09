@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
 import profilePic from "../Assets/avatar.jpg"
+import ProfileMenu from './ProfileMenu';
 
 
 const Navbar = () => {
   const [click, setclick] = useState(false);
   const handle = () => setclick(!click);
+  const [openMenu, setOpenMenu] = useState(false);
+
   const content = <>
     <div className='lg:hidden block absolute top-16 w-full left-0 right-0 opacity-90 bg-lime-200 cursor-pointer '>
 
@@ -49,16 +52,18 @@ const Navbar = () => {
 
           <div  ><ul className='flex text-center gap-3'><li className='text-xl bg-amber-200 w-50 h-10 font-bold py-1   rounded-2xl  border-2  text-blue-400'>
             <Link to="/Login">Login/Signup</Link></li>
-            <Link to="/Profile">
-           
-            <li><img className='w-10  rounded-full border-1' src={profilePic} alt="Profile" srcset="" />
-            </li></Link></ul>
+            </ul>
+          </div>
+          <div className='flex items-center gap-1'>
+            <button onClick={() => setOpenMenu ((prev) => !prev)}><img className='w-10  rounded-full border-1 cursor-pointer' src={profilePic} alt="Profile" /></button>
+             {openMenu && <ProfileMenu closeMenu={() => setOpenMenu(false)} />}
           </div>
         </div>
         <div>
           {click && content}
         </div>
         <button className='block sm:hidden transition' onClick={handle}>{click ? <ImCross /> : <GiHamburgerMenu />}</button>
+
       </nav>
 
     </div>
