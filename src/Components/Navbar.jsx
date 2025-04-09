@@ -21,8 +21,7 @@ const Navbar = () => {
         <Link to="Blog Post" smooth={true} spy={true}><li className='hover:underline'>Blog Post</li></Link>
         <Link to="/Company" smooth={true} spy={true}><li className='hover:underline'>Company</li></Link>
         <Link to="Notifications" smooth={true} spy={true}><li className='hover:underline'>Notifications</li></Link>
-        <Link to="Support" smooth={true} spy={true}><li className='hover:underline'>Support</li></Link>
-
+        
         <Link to="/Profile" >
           <li className='text-center ml-60'><img className='w-5 rounded-full border-1' src={profilePic} alt="profile" srcset="" /></li>
         </Link>
@@ -31,7 +30,7 @@ const Navbar = () => {
 
     </div></>
   return (
-    <div className='sticky top-0 opacity-80'>
+    <div className='sticky top-0 z-50 opacity-80'>
       <nav className=' bg-blue-200 justify-between  flex p-3 cursor-pointer   bg-white-400 items-center'>
         <a href="#" id="logo" className='flex gap-2 items-center'>
           <img className='max-w-12 max-h-12 rounded-full object-cover' src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQumBDVsn-16viIQ9pFnRB2awDWgjZ87c57xQ&s" alt="logo" />
@@ -45,8 +44,7 @@ const Navbar = () => {
             <Link spy={true} smooth={true} to='Blog Post'><li className='hover:underline'>Blog-Post</li></Link>
             <Link spy={true} smooth={true} to='Company'> <li className='hover:underline'>Company</li></Link>
             <Link spy={true} smooth={true} to='Notification'> <li className='hover:underline'>Notification</li></Link>
-            <Link spy={true} smooth={true} to='Support'><li className='hover:underline'>Support</li></Link>
-
+            
           </ul>
           </div>
 
