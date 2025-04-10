@@ -6,6 +6,7 @@ import Navbar from './Components/Navbar';
 import Profile from './Components/Profile'
 import Footer from './Components/Footer';
 import Job from'./Components/Job';
+import Notifications from'./Components/Notifications';
 
 import { Route, Routes } from 'react-router-dom';
 import Job_Post from './Components/JobPost';
@@ -23,6 +24,7 @@ const  App=()=>{
         <Route path="/Profile" element={<Profile />} />
         <Route path="/login" element={<Signup/>} />
         <Route path="/Company" element={<Job_Post/>}/>
+        <Route path="/Notifications" element={<Notifications/>}/>
         <Route path="/lost-password" element={<LostPassword />} />
       </Routes>
       <Footer/>
