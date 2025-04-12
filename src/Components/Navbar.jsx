@@ -17,8 +17,8 @@ const Navbar = () => {
       <ul className='flex flex-col gap-2.5 justify-evenly items-center text-xl font-semibold  text-black '>
         <Link to="/Home" smooth={true} spy={true}><li className='hover:underline'>Home</li></Link>
 
-        <Link to="Job" smooth={true} spy={true}><li className='hover:underline'>Job</li></Link>
-        <Link to="Blog Post" smooth={true} spy={true}><li className='hover:underline'>Blog Post</li></Link>
+        <Link to="/Job" smooth={true} spy={true}><li className='hover:underline'>Job</li></Link>
+        <Link to="/Blog-Post" smooth={true} spy={true}><li className='hover:underline'>Blog Post</li></Link>
         <Link to="/Company" smooth={true} spy={true}><li className='hover:underline'>Company</li></Link>
         <Link to="/Notifications" smooth={true} spy={true}><li className='hover:underline'>Notifications</li></Link>
         
@@ -41,7 +41,7 @@ const Navbar = () => {
             <Link spy={true} smooth={true} to='/Home'><li className='hover:underline'>Home</li></Link>
 
             <Link spy={true} smooth={true} to='Job'><li className='hover:underline'>Job</li></Link>
-            <Link spy={true} smooth={true} to='Blog Post'><li className='hover:underline'>Blog-Post</li></Link>
+            <Link spy={true} smooth={true} to='Blog-Post'><li className='hover:underline'>Blog-Post</li></Link>
             <Link spy={true} smooth={true} to='Company'> <li className='hover:underline'>Company</li></Link>
             <Link spy={true} smooth={true} to='Notifications'> <li className='hover:underline'>Notification</li></Link>
             
