@@ -1,5 +1,7 @@
 import React, { use, useContext, useEffect } from 'react'
 import { AppContext } from '../context/AppContext'
+import { MdAddBox } from "react-icons/md";
+import { Link } from 'react-router-dom';
 import { ImCross } from "react-icons/im";
 import '../data.js';
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
@@ -21,7 +23,7 @@ const Jobfilter = () => {
         )
     }
     const handlelocation=(location)=>{
-        setselect(
+        setselectlocation(
             prev=>prev.includes(location)? prev.filter(c=>c!==location):[...prev,location]
         )
     }
@@ -42,8 +44,7 @@ const matchlocation=job=>SearchFilter.location==="" || job.location.toLowerCase(
        setcurrentpage(1)
 
 
-}
-    ,[jobs,selectlocation,SearchFilter,select])
+},[jobs,selectlocation,SearchFilter,select])
   return (
     <div className='container 2xl:px-20 mx-auto flex flex-col lg:flex-row max-lg:space-y-8 py-8'>
       <div className='w-full lg:w-1/4 bg-white px-4'>
@@ -85,11 +86,10 @@ const matchlocation=job=>SearchFilter.location==="" || job.location.toLowerCase(
             <ul className='space-y-4 text-gray-600'>
                 { JobLocations.map((location,index)=>
                 <li  key={index}>
-                    <input    className='scale-125 mr-2 ' 
+                    <input   className='scale-125 mr-2 ' 
                        type="checkbox" 
                      onChange={()=>handlelocation(location)} 
-                    checked={select.includes(location) } 
-                />
+                    checked={selectlocation.includes(location) }/>
                     {location}
                 </li>
                 )}
@@ -98,9 +98,20 @@ const matchlocation=job=>SearchFilter.location==="" || job.location.toLowerCase(
 </div>
 
             <section className='w-full lg:w-3/4 text-gray-900 max-lg:px-4'>
-                <h3 className='font-medium  text-3xl py-2' id='job-list'>Latest Jobs</h3>
-            <p className='mb-8 text-gray-700'>Get Your desired job from our top companies </p>
+           <div className="flex justify-between items-center gap-4"> 
+            <div>
+
+<h3 className='font-medium  text-3xl py-2' id='job-list'>Latest Jobs</h3>
+<p className='mb-8 text-gray-700'>Get Your desired job from our top companies </p>
+</div>
+
+<div><Link to="/Companies">
+<button className='flex items-center text-sm cursor-pointer bg-pink-400 py-3 px-2 rounded'><MdAddBox className='font-bold text-2xl text-amber-50'/><span className='ml-1 font-extrabold text-amber-50'>Add-Job</span></button>
+</Link></div>
+
+</div>
             <div className=' grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4'> 
+                
 {filterjob.slice((currentpage-1)*6,currentpage*6).map((job,index)=>
     (<JobCard key={index} job={job}/>))}
 

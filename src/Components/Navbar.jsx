@@ -1,70 +1,62 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { GiHamburgerMenu } from "react-icons/gi";
-import { ImCross } from "react-icons/im";
+ import { NavbarMenu } from '../NavData/navdata'
+ import { MdComputer ,MdMenu} from 'react-icons/md'
+ import {motion} from "framer-motion"
 import profilePic from "../Assets/avatar.jpg"
-import ProfileMenu from './ProfileMenu';
+import ProfileMenu from './ProfileMenu'
+import { IoIosNotifications } from "react-icons/io";
 
-
+import ResNav from '../NavData/ResNav'
 const Navbar = () => {
-  const [click, setclick] = useState(false);
-  const handle = () => setclick(!click);
-  const [openMenu, setOpenMenu] = useState(false);
-
-  const content = <>
-    <div className='lg:hidden block absolute top-16 w-full left-0 right-0 opacity-90 bg-lime-200 cursor-pointer '>
-
-      <ul className='flex flex-col gap-2.5 justify-evenly items-center text-xl font-semibold  text-black '>
-        <Link to="/Home" smooth={true} spy={true}><li className='hover:underline'>Home</li></Link>
-
-        <Link to="/Job" smooth={true} spy={true}><li className='hover:underline'>Job</li></Link>
-        <Link to="/Blog-Post" smooth={true} spy={true}><li className='hover:underline'>Blog Post</li></Link>
-        <Link to="/Company" smooth={true} spy={true}><li className='hover:underline'>Company</li></Link>
-        <Link to="/Notifications" smooth={true} spy={true}><li className='hover:underline'>Notifications</li></Link>
-        
-        <Link to="/Profile" >
-          <li className='text-center ml-60'><img className='w-5 rounded-full border-1' src={profilePic} alt="profile" srcset="" /></li>
+      const [openMenu, setOpenMenu] = useState(false);
+        const [isOpen,setisOpen]=useState(false)
+  return (
+   <motion.div
+   className='sticky top-0 z-50 opacity-90 bg-pink-200'>
+    <div className=' flex justify-between   p-3 cursor-pointer   bg-white-400 items-center'>
+       <Link to="/"> <div className='text-2xl flex items-center gap-2 font-bold'>
+        <img className='w-15 rounded-full object-cover' src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-organization-icon-in-trendy-style-isolated-background-png-image_4844381.jpg" alt="logo" />
+<p  className='text-25px font-serif lg:text-xl'> Job Dhundo</p>
+        </div>
         </Link>
 
-      </ul>
 
-    </div></>
-  return (
-    <div className='sticky top-0 z-50 opacity-80'>
-      <nav className=' bg-blue-200 justify-between  flex p-3 cursor-pointer   bg-white-400 items-center'>
-        <a href="#" id="logo" className='flex gap-2 items-center'>
-          <img className='max-w-12 max-h-12 rounded-full object-cover' src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQumBDVsn-16viIQ9pFnRB2awDWgjZ87c57xQ&s" alt="logo" />
-          <span className='text-lg font-medium '>Job Dhundo</span>
-        </a>
-        <div className='lg:flex md:flex lg:flex-1  justify-evenly  items-center font-normal hidden'>
-          <div><ul className=' flex text-cyan-950 space-x-7 text-xl font-bold font-mono'>
-            <Link spy={true} smooth={true} to='/Home'><li className='hover:underline'>Home</li></Link>
+        {/*Menu*/}
+        <div className='hidden lg:block'>
+<ul className='flex   items-center gap-6'>
+    { NavbarMenu.map((item)=>{
+            return (
+ <li key={item.id}>
+<Link to={item.link}
+className='touch inline-block
+ text-gray-900 text-xl xl:text-base py-1  px-2 xl:px-3 hover:text-amber-50'>
+    {item.title}</Link>
+                </li> 
+            )
+        })
+    }
+</ul>
+        </div>
 
-            <Link spy={true} smooth={true} to='Job'><li className='hover:underline'>Job</li></Link>
-            <Link spy={true} smooth={true} to='Blog-Post'><li className='hover:underline'>Blog-Post</li></Link>
-            <Link spy={true} smooth={true} to='Company'> <li className='hover:underline'>Company</li></Link>
-            <Link spy={true} smooth={true} to='Notifications'> <li className='hover:underline'>Notification</li></Link>
-            
-          </ul>
-          </div>
-
-          <div  ><ul className='flex text-center gap-3'><li className='text-xl bg-amber-200 w-50 h-10 font-bold py-1   rounded-2xl  border-2  text-blue-400'>
-            <Link to="/Login">Login/Signup</Link></li>
-            </ul>
-          </div>
-          <div className='flex items-center gap-1'>
-            <button onClick={() => setOpenMenu ((prev) => !prev)}><img className='w-10  rounded-full border-1 cursor-pointer' src={profilePic} alt="Profile" /></button>
+        <div className='hidden lg:block space-x-6 '>
+          <div className='flex items-center gap-7'>
+            <Link to="/Notification"><IoIosNotifications className='text-pink-600 text-3xl cursor-pointer hover:text-amber-50'/></Link>
+           <Link to="/Join"> <button className='cursor-pointer font-semibold bg-pink-600 text-white rounded px-6 py-2'>Join Now</button></Link>
+            <button onClick={() => setOpenMenu ((prev) => !prev)}>
+            <img className='w-10  rounded-full border-1 cursor-pointer' src={profilePic} alt="Profile" /></button>
              {openMenu && <ProfileMenu closeMenu={() => setOpenMenu(false)} />}
           </div>
         </div>
-        <div>
-          {click && content}
-        </div>
-        <button className='block sm:hidden transition' onClick={handle}>{click ? <ImCross /> : <GiHamburgerMenu />}</button>
-
-      </nav>
-
+        <div className='lg:hidden' onClick={()=>setisOpen(!isOpen)}>
+            <MdMenu className='text-4xl lg:hidden'/>      
+            
+            <ResNav isOpen={isOpen}/>
+              </div>
     </div>
+
+    </motion.div>
+
   )
 }
 

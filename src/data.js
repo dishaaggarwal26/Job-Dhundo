@@ -112,6 +112,7 @@ export const jobsData = [
             <li>Ability to work in an Agile environment.</li>
         </ol>`,
         salary: 82000,
+        type:"full-time",
         date: 1729681667114,
         category: "Programming",
     },
@@ -144,6 +145,8 @@ export const jobsData = [
             <li>Familiarity with machine learning techniques and algorithms.</li>
             <li>Excellent problem-solving and critical-thinking skills.</li>
         </ol>`,
+        type:"full-time",
+
         salary: 72000,
         date: 1729681667114,
         category: "Data Science",
@@ -192,6 +195,8 @@ export const jobsData = [
             "email": "slack@demo.com",
              
         },
+        type:"part-time",
+
         description: `
         <p>Enhance our deployment pipeline as a DevOps Engineer. This role will involve automating deployment processes, managing cloud infrastructure, and implementing best practices for security and performance. You will play a vital role in bridging the gap between development and operations, ensuring efficient workflows and high-quality releases.</p>
         <h2><strong>Key Responsibilities</strong></h2>
@@ -243,6 +248,8 @@ export const jobsData = [
             <li>Familiarity with version control systems (e.g., Git).</li>
             <li>Excellent communication and teamwork abilities.</li>
         </ol>`,
+        type:"contract",
+
         salary: 91000,
         date: 1729681667114,
         category: "Programming",
@@ -277,8 +284,11 @@ export const jobsData = [
             <li>Relevant certifications (e.g., CCNA, CCNP) are a plus.</li>
         </ol>`,
         salary: 77000,
+        type:"full-time",
         date: 1729681667114,
         category: "Networking",
+        skill:"java, c++ ,c ,python,sql"
+        
     },
     {
         _id: '7',
@@ -291,6 +301,11 @@ export const jobsData = [
             "email": "slack@demo.com",
              
         },
+
+
+
+                skill:"java, c++ ,c ,python,sql",
+
         description: `
         <p>Lead projects as a Project Manager ensuring timely delivery and alignment with organizational goals. You will oversee project planning, execution, and monitoring, collaborating with various teams to ensure that all aspects of each project are delivered successfully. Your strong leadership skills will be key to motivating team members and fostering a positive work environment.</p>
         <h2><strong>Key Responsibilities</strong></h2>
@@ -324,6 +339,10 @@ export const jobsData = [
             "email": "slack@demo.com",
              
         },
+
+
+                skill:"java, c++ ,c ,python,sql",
+
         description: `
         <p>Join our team as a Mobile App Developer to create engaging mobile applications for iOS and Android platforms. You will be responsible for the full app development lifecycle, from concept and design to deployment and maintenance. Your creativity and technical skills will help us deliver high-quality applications that enhance user experience.</p>
         <h2><strong>Key Responsibilities</strong></h2>
@@ -343,6 +362,7 @@ export const jobsData = [
             <li>Familiarity with version control systems (e.g., Git).</li>
         </ol>`,
         salary: 112000,
+        type:"internship",
         date: 1729681667114,
         category: "Programming",
     },
@@ -351,6 +371,9 @@ export const jobsData = [
         title: "Cloud Architect",
         location: "Hyderabad",
         level: "Senior Level",
+
+                skill:"java, c++ ,c ,python,sql",
+
         companyId: {
             "_id": "670e4d25ca9fda8f1bf359b9",
             "name": "Slack",
@@ -423,6 +446,8 @@ export const jobsData = [
             "email": "slack@demo.com",
              
         },
+                skill:"java, c++ ,c ,python,sql",
+
         description: `
         <p>Protect our systems as a Cybersecurity Analyst. In this role, you will monitor security systems, analyze potential threats, and implement protective measures to safeguard our information and assets. Your expertise will help us stay ahead of evolving security challenges and maintain a secure environment for our users and stakeholders.</p>
         <h2><strong>Key Responsibilities</strong></h2>
@@ -447,6 +472,7 @@ export const jobsData = [
     },
     {
         _id: '12',
+        skill:"java, c++ ,c ,python,sql",
         title: "Business Analyst",
         location: "Mumbai",
         level: "Intermediate Level",
@@ -513,6 +539,7 @@ export const jobsData = [
     },
     {
         _id: '14',
+        skill:"java, c++ ,c ,python,sql",
         title: "Data Scientist",
         location: "California",
         level: "Senior Level",
@@ -522,6 +549,7 @@ export const jobsData = [
             "email": "slack@demo.com",
              
         },
+        
         description: `
         <p>Join our innovative team as a Data Scientist, where you will analyze complex data sets to drive strategic decision-making. You will leverage your statistical and programming skills to uncover insights and develop predictive models, contributing to the overall success of our organization.</p>
         <h2><strong>Key Responsibilities</strong></h2>
@@ -540,12 +568,15 @@ export const jobsData = [
             <li>Excellent problem-solving skills and attention to detail.</li>
             <li>Ability to communicate complex concepts to non-technical audiences.</li>
         </ol>`,
+        type:"internship",
+
         salary: 65000,
         date: 1729681667114,
         category: "Data Science",
     },
     {
         _id: '15',
+        skill:"java, c++ ,c ,python,sql",
         title: "UX/UI Designer",
         location: "Hyderabad",
         level: "Intermediate Level",
@@ -588,6 +619,8 @@ export const jobsData = [
             "email": "slack@demo.com",
              
         },
+        type:"internship",
+
         description: `
         <p>As a DevOps Engineer, you will play a crucial role in enhancing our software development and deployment processes. You will work with development and operations teams to automate workflows, improve system reliability, and ensure seamless integration and delivery of applications.</p>
         <h2><strong>Key Responsibilities</strong></h2>
@@ -654,6 +687,7 @@ export const jobsData = [
             "email": "slack@demo.com",
              
         },
+        skill:"java, c++ ,c ,python,sql",
         description: `
         <p>As a Human Resources Specialist, you will support various HR functions, including recruitment, employee relations, and compliance. You will play a vital role in fostering a positive workplace culture and ensuring that our HR practices align with organizational goals.</p>
         <h2><strong>Key Responsibilities</strong></h2>
@@ -672,6 +706,8 @@ export const jobsData = [
             <li>Ability to maintain confidentiality and handle sensitive information.</li>
             <li>Attention to detail and strong organizational skills.</li>
         </ol>`,
+        type:"internship",
+
         salary: 89000,
         date: 1729681667114,
         category: "Management",
@@ -687,6 +723,7 @@ export const jobsData = [
             "email": "slack@demo.com",
              
         },
+        skill:"java, c++ ,c ,python,sql",
         description: `
         <p>We are looking for a Content Marketing Manager to lead our content strategy and execution. In this role, you will develop compelling content that engages our audience and drives brand awareness. You will collaborate with various teams to ensure consistent messaging across all platforms.</p>
         <h2><strong>Key Responsibilities</strong></h2>
@@ -705,12 +742,17 @@ export const jobsData = [
             <li>Excellent analytical skills and ability to interpret data.</li>
             <li>Strong leadership and project management skills.</li>
         </ol>`,
+        type:"internship",
+        skill:"java, c++ ,c ,python,sql",
+
+
         salary: 99000,
         date: 1729681667114,
         category: "Marketing",
     },
     {
         _id: '20',
+        skill:"java, c++ ,c ,python,sql",
         title: "Graphic Designer",
         location: "Chennai",
         level: "Intermediate Level",
@@ -746,6 +788,9 @@ export const jobsData = [
         _id: '21',
         title: "Software Tester",
         location: "Chennai",
+        skill:"java, c++ ,c ,python,sql",
+        type:"internship",
+
         level: "Intermediate Level",
         companyId: {
             "_id": "670e4d25ca9fda8f1bf359b9",
@@ -773,10 +818,13 @@ export const jobsData = [
         </ol>`,
         salary: 123000,
         date: 1729681667114,
+
+
         category: "Programming",
     },
     {
         _id: '22',
+        type:"full-time",
         title: "Network Security Engineer",
         location: "Bangalore",
         level: "Senior Level",
@@ -786,6 +834,8 @@ export const jobsData = [
             "email": "slack@demo.com",
              
         },
+        skill:"java, c++ ,c ,python,sql",
+
         description: `
         <p>We are seeking a Network Security Engineer to protect our organization's IT infrastructure. You will design and implement security measures to safeguard systems from unauthorized access and ensure compliance with security policies.</p>
         <h2><strong>Key Responsibilities</strong></h2>
@@ -813,12 +863,15 @@ export const jobsData = [
         title: "Cloud Engineer",
         location: "Hyderabad",
         level: "Intermediate Level",
+
         companyId: {
             "_id": "670e4d25ca9fda8f1bf359b9",
             "name": "Slack",
             "email": "slack@demo.com",
              
         },
+                skill:"java, c++ ,c ,python,sql",
+
         description: `
         <p>Join our technology team as a Cloud Engineer, where you will be responsible for designing and managing our cloud infrastructure. You will collaborate with development and operations teams to ensure the efficient deployment and scaling of applications.</p>
         <h2><strong>Key Responsibilities</strong></h2>
@@ -837,6 +890,7 @@ export const jobsData = [
             <li>Experience with container orchestration tools like Kubernetes.</li>
             <li>Good problem-solving skills and attention to detail.</li>
         </ol>`,
+        type:"contract",
         salary: 102000,
         date: 1729681667114,
         category: "Programming",

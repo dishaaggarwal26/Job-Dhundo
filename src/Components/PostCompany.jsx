@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 
-const Job_Post = () => {
+const PostCompany = () => {
   const [job, setJob] = useState({
     title: '',
     company: '',
+    level:'',
     location: '',
     salary: '',
     jobType: 'Full-Time',
@@ -81,7 +82,7 @@ const Job_Post = () => {
           required
         />
 
-        {/* Job Location Dropdown */}
+        {/* Job Location or Level Dropdown */}
         <select
           name="location"
           value={job.location}
@@ -96,16 +97,19 @@ const Job_Post = () => {
           <option value="Delhi">🏢 Delhi</option>
           <option value="Hyderabad">🌇 Hyderabad</option>
         </select>
-
-        {/* Salary Input */}
-        <input
-          type="text"
-          name="salary"
-          placeholder="Salary (e.g., ₹5 LPA)"
-          value={job.salary}
+        <select
+          name="level"
+          value={job.level}
           onChange={handleChange}
-          className="w-full p-3 border-2 border-yellow-300 rounded-md focus:ring-2 focus:ring-yellow-500 outline-none"
-        />
+          className="w-full p-3 border-2 border-purple-300 rounded-md bg-white focus:ring-2 focus:ring-purple-500 outline-none"
+          required
+        >
+          <option value="">Select Level</option>
+          <option value="Beginner">🌍 Beginner</option>
+          <option value="Intermediate">🏙 Intermediate</option>
+          <option value="Senior">🌆 Senior</option>
+            </select>
+ 
 
         {/* Job Type Dropdown */}
         <select
@@ -131,6 +135,15 @@ const Job_Post = () => {
           required
         />
 
+        {/* Salary Input */}
+        <input
+          type="text"
+          name="salary"
+          placeholder="Salary (e.g., ₹5 LPA)"
+          value={job.salary}
+          onChange={handleChange}
+          className="w-full p-3 border-2 border-yellow-300 rounded-md focus:ring-2 focus:ring-yellow-500 outline-none"
+        />
         {/* Skills */}
         <input
           type="text"
@@ -144,7 +157,7 @@ const Job_Post = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"
+          className=" bg-pink-600 text-white py-3 px-4 rounded-lg text-lg font-semibold"
         >
           🚀 Post Job
         </button>
@@ -156,4 +169,4 @@ const Job_Post = () => {
   );
 };
 
-export default Job_Post;
+export default PostCompany;

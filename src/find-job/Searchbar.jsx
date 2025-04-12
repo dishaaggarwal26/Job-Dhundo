@@ -20,9 +20,9 @@ const Searchbar = () => {
  }
   return (
     <div className='container 2xl:px-20 mx-auto my-10'>
-<div className=' bg-gradient-to-r from-blue-300  to-pink-200 text-white py-16 text-centre mx-2 rounded-xl'>
+<div className=' bg-gradient-to-r shadow-2xs from-pink-300  to-pink-200 text-white py-16 text-centre mx-2 rounded-xl'>
 <h1 className='text-2xl md:text-3xl lg:text-5xl font-medium mb-4 text-center  '>Over 10,000+ jobs to Apply</h1>
-<p className='mb-8 max-w-xl mx-auto text-sm font-light px-5 text-center '>Unleash your potential and find your dream career today! <br /> Our job portal connects ambitious professionals like you.
+<p className='mb-8 max-w-xl mx-auto text-md  px-5 text-center text-gray-800 font-semibold '>Unleash your potential and find your dream career today! <br /> Our job portal connects ambitious professionals like you.
 </p>
 <div className='flex items-center justify-between bg-amber-50 rounded text-gray-600 max-w-xl pl-4 mx-4 sm:mx-auto'>
     <div className='flex justify-evenly items-center'><FaSearch className='h-4 sm:h-5'/>

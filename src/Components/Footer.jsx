@@ -1,67 +1,84 @@
 import React from 'react'
-import { FaInstagramSquare } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
+import { FaInstagramSquare, FaTwitter, FaFacebookSquare, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div>
-      <div className='flex flex-col  items-center  gap-10 mt-30   bg-pink-100 justify-evenly  md:flex-row    '>
-        <div className='flex-col '>
-          <div><img className='max-w-20 mt-5 max-h-20 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQumBDVsn-16viIQ9pFnRB2awDWgjZ87c57xQ&s" alt="" srcset="" /><h1 className='font-bold text-2xl '>Job Dhundo</h1></div>
-          <p className='w-100   font-semibold mt-5 md:w-80'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, neque quos! Pariatur placeat laudantium similique laborum eligendi possimus nam cum, exercitationem adipisci consequatur nihil iusto iure quos quisquam ullam nostrum?</p>
-          <div className='flex mb-6  mt-4 items-center gap-5 text-4xl'>
+    <div className=" pt-10">
+     
+      <div className='p-15 bg-pink-100 flex flex-col items-center gap-10 px-5 md:px-10 md:flex-row md:justify-evenly'>
+       
+        <div className='flex flex-col items-center md:items-start max-w-md text-center md:text-left'>
+          <img className='w-20 h-20 mt-5 rounded-full object-cover' src="https://png.pngtree.com/png-clipart/20190924/original/pngtree-organization-icon-in-trendy-style-isolated-background-png-image_4844381.jpg" alt="Logo" />
+          <h1 className='font-bold text-2xl mt-2'>Job Dhundo</h1>
+          <p className='font-semibold mt-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur placeat laudantium similique laborum eligendi cum consequatur nihil.</p>
+          <div className='flex mt-4 items-center gap-5 text-3xl'>
             <FaInstagramSquare className='text-pink-400' />
             <FaTwitter className='text-blue-400' />
             <FaYoutube className='text-red-600' />
             <FaFacebookSquare className='text-blue-400' />
           </div>
         </div>
-        <div className='mr-20  md:mr-0'><h1 className='text-3xl text-black  font-extrabold '>About</h1>
-          <ul className='mt-4  font-bold text-gray-800'><li>Job</li>
 
+        {/* About */}
+        <div>
+          <h1 className='text-2xl font-extrabold'>About</h1>
+          <ul className='mt-4 font-bold text-gray-800 space-y-2'>
+            <li>Job</li>
             <li>Privacy</li>
-
-            <li>Police</li>
-
+            <li>Policy</li>
             <li>Application</li>
+            <li>Candidates</li>
+          </ul>
+        </div>
 
-            <li>Candidates</li></ul></div>
-        <div ><h1 className='text-3xl text-black  font-extrabold'>Quick Links</h1>
-          <ul className='mt-4  font-bold text-gray-800'><li>All Job</li>
-
+        {/* Quick Links */}
+        <div>
+          <h1 className='text-2xl font-extrabold'>Quick Links</h1>
+          <ul className='mt-4 font-bold text-gray-800 space-y-2'>
+            <li>All Job</li>
             <li>Job Details</li>
-
             <li>How to Apply</li>
-
             <li>Resume</li>
+          </ul>
+        </div>
 
-          </ul></div>
-        <div><h1 className='text-3xl  text-black  font-extrabold'>Get in Touch</h1>
-          <ul className='mt-4  font-bold  text-gray-800'><li>India</li>
-
-
-
+        {/* Contact */}
+        <div>
+          <h1 className='text-2xl font-extrabold'>Get in Touch</h1>
+          <ul className='mt-4 font-bold text-gray-800 space-y-2'>
+            <li>India</li>
             <li>+012345</li>
-
-            <li>deepibhatt03@gmail.com</li>
-
-            <li>9911124378</li></ul></div>
+            <li>deepi03@gmail.com</li>
+            <li>9911124378</li>
+          </ul>
+        </div>
       </div>
-      <div className=' mt-15 text-center '>
-        <ul><li className='text-4xl font-bold mt-5 '>Our Products</li>
-          <li className='text-xl text-gray-500 font-semibold   mt-7'>Our other brands and products, you might be interested</li>
-          <li className='grid grid-cols-3  gap-5 md:flex items-center justify-evenly  mb-5 mt-10'><div className=' flex items-center  gap-1 justify-center'> <img className='w-10 h-10 rounded-full' src="https://play-lh.googleusercontent.com/wiAQAX41pAP7n4MN6Jk90lo_A3HqsYk_x-7Fkd8T6ryNl9bgOOyF5zF4McUhk_o1iQ" alt="logo" srcset="" /> <p className='font-bold text-xl'>Cutshort</p></div>
-            <div className=' flex items-center  gap-1 justify-center'> <img className='w-10 h-10 rounded-full' src="https://www.onlinemarketplaces.com/wp-content/uploads/2021/07/snaphunt.png" alt="logo" srcset="" /> <p className='font-bold text-xl'>SanpHunt</p></div>
-            <div className=' flex items-center  gap-1 justify-center'> <img className='w-10 h-10 rounded-full' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQewWviN7O6ryCUvog0cEtRDDVebtZrEPWt6A&s" alt="logo" srcset="" /> <p className='font-bold text-xl'>Upwork</p></div>
-            <div className=' flex items-center  gap-1 justify-center'> <img className='w-10 h-10 rounded-full' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQoA9cO-yJCqCfH0Mf-8zeig7kZwvExfaxVA&s" alt="logo" srcset="" /> <p className='font-bold text-xl'>GlassDoor</p></div>
-            <div className=' flex items-center  gap-1 justify-center'> <img className='w-10 h-10 rounded-full' src="https://play-lh.googleusercontent.com/76gEFhQto5xMHr2Qf8nWLvm1s0O60clhkwHvxQDSeI3hthf7Zs05JJQeyg5H347DGQ" alt="logo" srcset="" /> <p className='font-bold text-xl'>Naukri</p></div>
-            <div className=' flex items-center  gap-1 justify-center'> <img className='w-10 h-10 rounded-full' src="https://avatars.slack-edge.com/2022-06-08/3628164267735_7035d65564bb181b33f7_512.png" alt="logo" srcset="" /> <p className='font-bold text-xl'>Indeed</p></div>
-            <div className=' flex items-center  gap-1 justify-center'> <img className='w-10 h-10 rounded-full' src="https://yt3.googleusercontent.com/vmpMU5zsNrS8_NqkdwJP48h75YuhtbtUjUcmmXyxbpmopSMx51RiNIA47n5hqrMZ4PRjTX-d4Mc=s900-c-k-c0x00ffffff-no-rj" alt="logo" srcset="" /> <p className='font-bold text-xl'>TimesJob</p></div>
-            <div className=' flex items-center  gap-1 justify-center'> <img className='w-10 h-10 rounded-full' src="https://pimwp.s3-accelerate.amazonaws.com/2023/02/Untitled-design-2022-12-19T101207.258.jpg.webp" alt='logo' srcset="" /> <p className='font-bold text-xl'>Foundit</p></div></li>
-          <hr className='opacity-20' />
-          <li className='text-lg mb-3  mt-3  text-gray-500'>@  Copyright 2025 - Job Dhundo | A Product by 4th year students</li></ul>
+
+      {/* Our Products Section */}
+      <div className='mt-12 text-center px-4'>
+        <h2 className='text-4xl text-black font-bold '>Our Products</h2>
+        <p className='text-lg text-gray-600 font-semibold mt-3'>Our other brands and products, you might be interested</p>
+
+        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 mt-10'>
+          {[
+            { name: 'Cutshort', img: 'https://play-lh.googleusercontent.com/wiAQAX41pAP7n4MN6Jk90lo_A3HqsYk_x-7Fkd8T6ryNl9bgOOyF5zF4McUhk_o1iQ' },
+            { name: 'SnapHunt', img: 'https://www.onlinemarketplaces.com/wp-content/uploads/2021/07/snaphunt.png' },
+            { name: 'Upwork', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQewWviN7O6ryCUvog0cEtRDDVebtZrEPWt6A&s' },
+            { name: 'GlassDoor', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQoA9cO-yJCqCfH0Mf-8zeig7kZwvExfaxVA&s' },
+            { name: 'Naukri', img: 'https://play-lh.googleusercontent.com/76gEFhQto5xMHr2Qf8nWLvm1s0O60clhkwHvxQDSeI3hthf7Zs05JJQeyg5H347DGQ' },
+            { name: 'Indeed', img: 'https://avatars.slack-edge.com/2022-06-08/3628164267735_7035d65564bb181b33f7_512.png' },
+            { name: 'TimesJob', img: 'https://yt3.googleusercontent.com/vmpMU5zsNrS8_NqkdwJP48h75YuhtbtUjUcmmXyxbpmopSMx51RiNIA47n5hqrMZ4PRjTX-d4Mc=s900-c-k-c0x00ffffff-no-rj' },
+            { name: 'Foundit', img: 'https://pimwp.s3-accelerate.amazonaws.com/2023/02/Untitled-design-2022-12-19T101207.258.jpg.webp' }
+          ].map((item, idx) => (
+            <div key={idx} className='flex items-center gap-2 justify-center'>
+              <img src={item.img} alt={item.name} className='w-10 h-10 rounded-full' />
+              <p className='font-bold text-lg'>{item.name}</p>
+            </div>
+          ))}
+        </div>
+
+        <hr className='my-6 border-gray-300 opacity-30' />
+        <p className='text-sm text-gray-500 mb-5'>&copy; 2025 - Job Dhundo | A Product by 4th year students</p>
       </div>
     </div>
   )
