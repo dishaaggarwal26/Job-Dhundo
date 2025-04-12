@@ -41,10 +41,11 @@ className='touch inline-block
 
         <div className='hidden lg:block space-x-6 '>
           <div className='flex items-center gap-7'>
-            <Link to="/Notification"><IoIosNotifications className='text-pink-600 text-3xl cursor-pointer hover:text-amber-50'/></Link>
+            <Link to="/Notifications"><IoIosNotifications className='text-pink-600 text-3xl cursor-pointer hover:text-amber-50'/></Link>
            <Link to="/Join"> <button className='cursor-pointer font-semibold bg-pink-600 text-white rounded px-6 py-2'>Join Now</button></Link>
             <button onClick={() => setOpenMenu ((prev) => !prev)}>
-            <img className='w-10  rounded-full border-1 cursor-pointer' src={profilePic} alt="Profile" /></button>
+            <img className='w-10  rounded-full border-1 cursor-pointer' src={profilePic} alt="Profile" />
+            </button>
              {openMenu && <ProfileMenu closeMenu={() => setOpenMenu(false)} />}
           </div>
         </div>

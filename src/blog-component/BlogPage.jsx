@@ -1,4 +1,4 @@
-import BlogsData from '../BlogsData.json';
+import BlogsData from './BlogsData.json';
 import React, { useEffect, useState } from "react";
 import Pagination from "./Pagination";
 import CategorSelection from "./CategorSelection";

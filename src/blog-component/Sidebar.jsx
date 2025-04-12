@@ -1,4 +1,4 @@
-import BlogsData from '../BlogsData.json';
+import BlogsData from './BlogsData.json';
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
