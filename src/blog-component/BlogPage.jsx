@@ -6,7 +6,7 @@ import Sidebar from "./Sidebar";
 import BlogCards from "./BlogCards";
 
 
-const BlogPage = ({ blogList }) => { //passing bloglist
+const BlogPage = () => { 
   const [blogs, setBlogs] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 12; // number of blogs per page
@@ -24,7 +24,7 @@ const BlogPage = ({ blogList }) => { //passing bloglist
     const startIndex = (currentPage - 1) * pageSize;
     const paginated = filtered.slice(startIndex, startIndex + pageSize);
     setBlogs(paginated);
-  }, [currentPage, selectedCategory,blogList]);
+  }, [currentPage, selectedCategory]);
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
