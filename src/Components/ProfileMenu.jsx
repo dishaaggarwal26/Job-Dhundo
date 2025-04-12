@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaRegUser } from "react-icons/fa";
 import { BiSupport } from "react-icons/bi";
 import { IoSettingsOutline } from "react-icons/io5";
@@ -8,6 +8,7 @@ import { FaPlus } from "react-icons/fa6";
 
 const ProfileMenu = ({ closeMenu }) => {
     const menuRef = useRef(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -20,6 +21,15 @@ const ProfileMenu = ({ closeMenu }) => {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, [closeMenu]);
 
+    const handleLogout = () => {
+        const confirmed = window.confirm("Are you sure you want to log out?");
+        if (confirmed) {
+            localStorage.removeItem("token");
+            navigate("/Join");
+        }
+    };
+
+
     return (
         <div
             ref={menuRef}
@@ -31,18 +41,27 @@ const ProfileMenu = ({ closeMenu }) => {
                 </li>
 
                 <li className="flex items-center gap-2 px-4 py-2 font-medium hover:bg-gray-100 cursor-pointer">
-                <FaPlus />
-                    <Link to="/Blog Post" onClick={closeMenu}>Create Post</Link>
+                    <FaPlus />
+                    <Link to="/Blogs" onClick={closeMenu}>Create Post</Link>
                 </li>
 
                 <li className="flex items-center gap-2 px-4 py-2 font-medium hover:bg-gray-100 cursor-pointer">
-                <BiSupport />
+                    <BiSupport />
                     <a href='https://wa.me/9873496767?text=Hello How can I help you ?' target='_blank'>
-                    Help & Support</a></li>
-                    
-                <li className="flex items-center gap-2 px-4 py-2 font-medium hover:bg-gray-100 cursor-pointer"><IoSettingsOutline />Settings </li>
+                        Help & Support</a></li>
+
+                <li className="flex items-center gap-2 px-4 py-2 font-medium hover:bg-gray-100 cursor-pointer">
+                    <IoSettingsOutline />
+                    <Link to="/settings" onClick={closeMenu}>Settings</Link>
+                </li>
+
                 <hr className="my-1 border-gray-400" />
-                <li className="flex items-center gap-2 px-4 py-2 font-bold text-red-600 hover:bg-gray-100 cursor-pointer"><MdLogout />Logout</li>
+                <li onClick={handleLogout}
+                    className="flex items-center gap-2 px-4 py-2 font-bold text-red-600 hover:bg-gray-100 cursor-pointer">
+                    <MdLogout />
+                    Logout
+                </li>
+
             </ul>
         </div>
     );

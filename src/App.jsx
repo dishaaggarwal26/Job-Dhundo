@@ -8,6 +8,7 @@ import Footer from './Components/Footer';
 import Job from'./Components/Job';
 import Blogs from'./Components/Blogs';
 import Notifications from'./Components/Notifications';
+import Settings from './Components/Settings'; 
 import { Route, Routes } from 'react-router-dom';
 import Home from './Components/Home';
 import PostCompany from './Components/PostCompany';
@@ -28,7 +29,7 @@ const  App=()=>{
 
         <Route path="/Companies" element={<PostCompany/>}/>
         <Route path="/lost-password" element={<LostPassword />} />
-      
+        <Route path="/settings" element={<Settings />} />
       </Routes>
       <Footer/>
 </main>
