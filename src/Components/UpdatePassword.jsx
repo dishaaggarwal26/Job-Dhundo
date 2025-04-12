@@ -58,7 +58,7 @@ const UpdatePassword = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-purple-100">
       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-2xl shadow-lg">
         <h2 className="text-2xl font-bold text-center text-gray-800">
           Update Password
@@ -68,7 +68,7 @@ const UpdatePassword = () => {
         <form className="space-y-4" onSubmit={handleSubmit}>
           <input
             type="password"
-            className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500"
             placeholder="New Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -76,7 +76,7 @@ const UpdatePassword = () => {
           />
           <input
             type="password"
-            className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500"
             placeholder="Confirm Password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
@@ -87,7 +87,7 @@ const UpdatePassword = () => {
             className={`w-full py-3 text-white font-semibold rounded-xl transition duration-300 ${
               loading
                 ? "bg-gray-400 cursor-not-allowed"
-                : "bg-blue-500 hover:bg-blue-600"
+                : "bg-pink-500 hover:bg-pink-600"
             }`}
             disabled={loading}
           >
