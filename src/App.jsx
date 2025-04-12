@@ -6,7 +6,7 @@ import Navbar from './Components/Navbar';
 import Profile from './Components/Profile'
 import Footer from './Components/Footer';
 import Job from'./Components/Job';
-import Blogs from'./Components/Blogs';
+import Blogs from './Components/Blogs';
 import Notifications from'./Components/Notifications';
 import Settings from './Components/Settings'; 
 import { Route, Routes } from 'react-router-dom';
