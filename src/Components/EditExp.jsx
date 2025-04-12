@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const EditExperienceModal = ({ data, onSave, onClose }) => {
   const [formData, setFormData] = useState(data);
@@ -10,7 +11,13 @@ const EditExperienceModal = ({ data, onSave, onClose }) => {
 
   return (
     <div className="fixed inset-0 flex justify-center items-center backdrop-blur-sm bg-black/70 z-50">
-      <div className="bg-white p-6 rounded-xl w-11/12 md:w-1/2">
+      <motion.div
+        initial={{ y: '-100vh', opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: '-100vh', opacity: 0 }}
+        transition={{ duration: 0.4, ease: 'easeInOut' }}
+        className="bg-white p-6 rounded-xl w-11/12 md:w-1/2"
+      >
         <h2 className="text-xl font-bold mb-4">Edit Experience</h2>
 
         <input
@@ -49,7 +56,7 @@ const EditExperienceModal = ({ data, onSave, onClose }) => {
             Save
           </button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

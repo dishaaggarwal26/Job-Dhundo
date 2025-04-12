@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const EditEducationModal = ({ data, onClose, onSave }) => {
   const [degree, setDegree] = useState(data.degree);
@@ -16,7 +17,13 @@ const EditEducationModal = ({ data, onClose, onSave }) => {
 
   return (
     <div className="fixed inset-0 backdrop-blur-sm bg-black/70 flex justify-center items-center z-50">
-      <div className="bg-white p-6 rounded-lg shadow-md w-96">
+      <motion.div
+        initial={{ y: '-100vh', opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: '-100vh', opacity: 0 }}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
+        className="bg-white p-6 rounded-lg shadow-md w-96"
+      >
         <h2 className="text-xl font-bold mb-4">Edit Education</h2>
         <input
           type="text"
@@ -43,7 +50,7 @@ const EditEducationModal = ({ data, onClose, onSave }) => {
           <button onClick={onClose} className="px-4 py-2 bg-gray-300 rounded">Cancel</button>
           <button onClick={handleSave} className="px-4 py-2 bg-pink-600 text-white rounded">Save</button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

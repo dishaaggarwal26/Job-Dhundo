@@ -9,7 +9,7 @@ import EditModal from './edit';
 import EditExperienceModal from './EditExp';
 import EditCertificationModal from './EditCerti';
 import EditEducationModal from './EditEdu';
-
+import { AnimatePresence } from "framer-motion";
 
 
 const Profile = () => {
@@ -151,7 +151,7 @@ const Profile = () => {
 
 
         <div className="w-full flex flex-col lg:flex-row mt-16 px-4 lg:px-12 gap-4">
-          <div className="w-full lg:w-1/3 bg-pink-100 p-4 rounded-xl self-start  top-28">
+          <div className="w-full lg:w-1/3 bg-pink-100 p-4 rounded-xl self-start sticky top-28">
             <div className="text-2xl font-bold mb-4">Quick Links</div>
             <ul className="space-y-2 font-semibold ">
               <li onClick={() => scrollToSection(skillsRef)} className="hover:underline cursor-pointer">Skills</li>
@@ -290,7 +290,7 @@ const Profile = () => {
               ) : (
                 <div className="bg-white p-5 rounded-xl shadow mb-4">
                   <label htmlFor="resumeUpload" className="cursor-pointer text-blue-600 hover:underline flex flex-col items-center justify-center h-20">
-                  <FaPlus className="w-5 h-5 text-2xl mb-2 font-bold" />
+                    <FaPlus className="w-5 h-5 text-2xl mb-2 font-bold" />
                     <p className='font-semibold'>Click to upload your resume</p>
                   </label>
                   <input
@@ -306,69 +306,81 @@ const Profile = () => {
 
 
 
+            <AnimatePresence>
+              {isEditingAbout && (
+                <EditModal
+                  title="Edit About"
+                  value={aboutText}
+                  setValue={setAboutText}
+                  onClose={() => setIsEditingAbout(false)}
+                  onSave={() => setIsEditingAbout(false)}
+                />
+              )}
+            </AnimatePresence>
 
-            {isEditingAbout && (
-              <EditModal
-                title="Edit About"
-                value={aboutText}
-                setValue={setAboutText}
-                onClose={() => setIsEditingAbout(false)}
-                onSave={() => setIsEditingAbout(false)}
-              />
-            )}
-            {isEditingSkills && (
-              <EditModal
-                title="Edit Skills (comma separated)"
-                value={skillInput}
-                setValue={setSkillInput}
-                onClose={() => setIsEditingSkills(false)}
-                onSave={() => {
-                  const updatedSkills = skillInput
-                    .split(",")
-                    .map((skill) => skill.trim())
-                    .filter((skill) => skill.length > 0);
-                  setSkills(updatedSkills);
-                  setIsEditingSkills(false);
-                }}
-              />
-            )}
-            {editingExp !== null && (
-              <EditExperienceModal
-                data={experience[editingExp]}
-                onClose={() => setEditingExp(null)}
-                onSave={(updated) => {
-                  const newExp = [...experience];
-                  newExp[editingExp] = updated;
-                  setExperience(newExp);
-                  setEditingExp(null);
-                }}
-              />
-            )}
-            {editingEdu !== null && (
-              <EditEducationModal
-                data={education[editingEdu]}
-                onClose={() => setEditingEdu(null)}
-                onSave={(updated) => {
-                  const newEdu = [...education];
-                  newEdu[editingEdu] = updated;
-                  setEducation(newEdu);
-                  setEditingEdu(null);
-                }}
-              />
-            )}
+            <AnimatePresence>
+              {isEditingSkills && (
+                <EditModal
+                  title="Edit Skills (comma separated)"
+                  value={skillInput}
+                  setValue={setSkillInput}
+                  onClose={() => setIsEditingSkills(false)}
+                  onSave={() => {
+                    const updatedSkills = skillInput
+                      .split(",")
+                      .map((skill) => skill.trim())
+                      .filter((skill) => skill.length > 0);
+                    setSkills(updatedSkills);
+                    setIsEditingSkills(false);
+                  }}
+                />
+              )}
+            </AnimatePresence>
 
-            {editingCert !== null && (
-              <EditCertificationModal
-                data={certifications[editingCert]}
-                onClose={() => setEditingCert(null)}
-                onSave={(updated) => {
-                  const newCerts = [...certifications];
-                  newCerts[editingCert] = updated;
-                  setCertifications(newCerts);
-                  setEditingCert(null);
-                }}
-              />
-            )}
+            <AnimatePresence>
+              {editingExp !== null && (
+                <EditExperienceModal
+                  data={experience[editingExp]}
+                  onClose={() => setEditingExp(null)}
+                  onSave={(updated) => {
+                    const newExp = [...experience];
+                    newExp[editingExp] = updated;
+                    setExperience(newExp);
+                    setEditingExp(null);
+                  }}
+                />
+              )}
+            </AnimatePresence>
+
+            <AnimatePresence>
+              {editingEdu !== null && (
+                <EditEducationModal
+                  data={education[editingEdu]}
+                  onClose={() => setEditingEdu(null)}
+                  onSave={(updated) => {
+                    const newEdu = [...education];
+                    newEdu[editingEdu] = updated;
+                    setEducation(newEdu);
+                    setEditingEdu(null);
+                  }}
+                />
+              )}
+            </AnimatePresence>
+
+            <AnimatePresence>
+              {editingCert !== null && (
+                <EditCertificationModal
+                  data={certifications[editingCert]}
+                  onClose={() => setEditingCert(null)}
+                  onSave={(updated) => {
+                    const newCerts = [...certifications];
+                    newCerts[editingCert] = updated;
+                    setCertifications(newCerts);
+                    setEditingCert(null);
+                  }}
+                />
+              )}
+            </AnimatePresence>
 
           </div>
         </div>
