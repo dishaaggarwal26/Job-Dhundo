@@ -47,8 +47,8 @@ const ProfileMenu = ({ closeMenu }) => {
 
                 <li className="flex items-center gap-2 px-4 py-2 font-medium hover:bg-gray-100 cursor-pointer">
                     <BiSupport />
-                    <a href='https://wa.me/9873496767?text=Hello How can I help you ?' target='_blank'>
-                        Help & Support</a></li>
+                    <Link to="/Help" onClick={closeMenu}>Help & Support</Link>
+                </li>
 
                 <li className="flex items-center gap-2 px-4 py-2 font-medium hover:bg-gray-100 cursor-pointer">
                     <IoSettingsOutline />
