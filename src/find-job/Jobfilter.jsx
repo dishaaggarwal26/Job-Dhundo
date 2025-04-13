@@ -98,7 +98,7 @@ const matchlocation=job=>SearchFilter.location==="" || job.location.toLowerCase(
 </div>
 
             <section className='w-full lg:w-3/4 text-gray-900 max-lg:px-4'>
-           <div className="flex justify-between items-center gap-4"> 
+           <div className="flex justify-evenly items-center gap-4"> 
             <div>
 
 <h3 className='font-medium  text-3xl py-2' id='job-list'>Latest Jobs</h3>
@@ -106,7 +106,8 @@ const matchlocation=job=>SearchFilter.location==="" || job.location.toLowerCase(
 </div>
 
 <div><Link to="/Companies">
-<button className='flex items-center text-sm cursor-pointer bg-pink-400 py-3 px-2 rounded'><MdAddBox className='font-bold text-2xl text-amber-50'/><span className='ml-1 font-extrabold text-amber-50'>Add-Job</span></button>
+<button className='flex items-center text-sm cursor-pointer bg-pink-400 py-3 px-2 rounded'><MdAddBox className='font-bold text-2xl text-amber-50'/><span className='ml-1 font-extrabold text-amber-50'>Add-Job</span>
+</button>
 </Link></div>
 
 </div>

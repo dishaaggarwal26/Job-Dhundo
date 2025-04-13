@@ -21,7 +21,7 @@ const ResNav = ({isOpen}) => {
  animate={{opacity:1 ,y:0}}
  exit={{opacity:0 ,y:-100}}
  transition={{duration:0.3}}
- className='absolute top-20  left-15 w-4/5 h-screen z-20 lg:hidden'
+ className='absolute top-20  left-0 w-5/5 h-screen z-20 lg:hidden'
 >
     <div className='text-xl  bg-pink-300  font-semibold uppercase m-6 rounded-3xl text-white py-10'>
 

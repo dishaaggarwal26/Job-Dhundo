@@ -27,16 +27,14 @@ const Content3 = () => {
       {Content3data.map((item, index) => (
         <div
           key={item.id}
-          className={`grid grid-cols-1 lg:grid-cols-2 items-center gap-y-10 gap-x-12 my-14 ${
-            index % 2 !== 0 ? 'lg:flex-row-reverse' : ''
-          }`}
+          className="grid grid-cols-1 lg:grid-cols-2 items-center gap-y-10 gap-x-12 my-14"
         >
           {/* Image Section */}
           <motion.div
             variants={SlideUp(0.2)}
             initial="hidden"
             whileInView="visible"
-            className="flex justify-center"
+            className={`flex justify-center ${index % 2 !== 0 ? 'lg:order-last' : ''}`}
           >
             <img
               src={item.img}
