@@ -33,7 +33,7 @@ const ProfileMenu = ({ closeMenu }) => {
     return (
         <div
             ref={menuRef}
-            className="absolute  text-gray-800 bg-pink-100 shadow-lg rounded z-50 w-48 md:right-3.5 md:mt-70">
+            className="absolute w-35 text-sm  text-gray-800 bg-pink-100 shadow-lg rounded z-30 md:w-48  md:right-2 md:mt-70">
             <ul className="text-left">
                 <li className="flex items-center gap-2 px-4 py-2 font-medium hover:bg-gray-100 cursor-pointer">
                     <FaRegUser />
