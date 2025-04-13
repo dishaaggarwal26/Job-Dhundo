@@ -50,9 +50,9 @@ const LostPassword = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen  bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen  bg-purple-100">
       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-2xl shadow-lg">
-        <h2 className="text-2xl font-bold text-center text-gray-800">Lost Password</h2>
+        <h2 className="text-2xl font-bold text-center text-pink-600">Lost Password</h2>
         {message && <p className="text-green-500 text-center">{message}</p>}
         {error && <p className="text-red-500 text-center">{error}</p>}
         <form className="space-y-4" onSubmit={handleSubmit}>
@@ -60,7 +60,7 @@ const LostPassword = () => {
             <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">@</span>
             <input
               type="email"
-              className="w-full p-3 pl-10 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 pl-10 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500"
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -70,7 +70,7 @@ const LostPassword = () => {
           <button
             type="submit"
             className={`w-full py-3 text-white font-semibold rounded-xl transition duration-300 ${
-              loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-600'
+              loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-pink-500 hover:bg-pink-600'
             }`}
             disabled={loading}
           >
@@ -78,7 +78,7 @@ const LostPassword = () => {
           </button>
           <p className="text-center text-gray-600">
             Remembered your password?{' '}
-            <a href="/login" className="text-blue-500 hover:underline">
+            <a href="/login" className="text-pink-500 hover:underline">
               Log In
             </a>
           </p>

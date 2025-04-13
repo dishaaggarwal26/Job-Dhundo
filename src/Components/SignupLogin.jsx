@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import ".././SignupLogin.css";
+import { motion } from "framer-motion";
 import user_icon from "../Assets/person.png";
 import email_icon from "../Assets/email.png";
 import password_icon from "../Assets/password.png";
@@ -134,14 +135,29 @@ const SignupLogin = () => {
   return (
     <div>
       <div className="mb-20 mt-20 flex justify-evenly items-center">
-        <div>
-          <img
-            className="w-0 h-0 md:h-120 md:w-full"
-            src={authenticate_img}
-            alt="signuplogo"
-          />
-        </div>
-        <div className="mr-10 signup-container">
+        {/* Image Section */}
+        <motion.div
+  className="hidden md:block w-full md:w-1/2"
+  initial={{ x: -200 }}
+  animate={{ x: 0 }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+>
+  <img
+    className="w-full max-w-md h-auto object-contain mx-auto"
+    src={authenticate_img}
+    alt="signuplogo"
+  />
+</motion.div>
+
+
+
+        {/* Form Section */}
+        <motion.div
+          className="mr-10 signup-container w-full md:w-1/2"
+          initial={{ x: 200 }}
+          animate={{ x: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <h2>{action}</h2>
           {successMessage && (
             <p className="success-message">{successMessage}</p>
@@ -252,7 +268,7 @@ const SignupLogin = () => {
               {action === "Sign Up" ? "Login" : "Sign Up"}
             </button>
           </form>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

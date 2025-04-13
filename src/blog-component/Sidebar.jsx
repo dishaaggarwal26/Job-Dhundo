@@ -25,7 +25,7 @@ const Sidebar = () => {
               <h4 className="font-medium mb-2">{blog.title}</h4>
               <Link
                 to={`/blog/${blog.id}`}
-                className="text-basepb-2 hover:text-orange-500 inline-flex items-center py-1"
+                className="text-basepb-2 hover:text-pink-500 inline-flex items-center py-1"
               >
                 Read more
                 <FaArrowRight className="mt-1 ml-2" />
@@ -46,7 +46,7 @@ const Sidebar = () => {
               <h4 className="font-medium mb-2">{blog.title}</h4>
               <Link
                 to={`/blog/${blog.id}`}
-                className="text-basepb-2 hover:text-orange-500 inline-flex items-center py-1"
+                className="text-basepb-2 hover:text-pink-500 inline-flex items-center py-1"
               >
                 Read more
                 <FaArrowRight className="mt-1 ml-2" />

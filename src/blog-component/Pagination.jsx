@@ -12,13 +12,13 @@ const Pagination = ({onPageChange, currentPage, totalPages}) => {
   return (
       <ul className='pagination my-8 flex-wrap gap-4'>
         <li>
-            <button onClick={()=> onPageChange(currentPage -1)} disabled={currentPage===1}>Previous</button>
+            <button onClick={()=> onPageChange(currentPage -1)} disabled={currentPage===1} className='cursor-pointer hover:text-pink-500'>Previous</button>
         </li>
         <div className='flex gap-1'>
             {renderPageinationLinks()}
         </div>
         <li>
-            <button onClick={()=> onPageChange(currentPage +1)} disabled={currentPage === totalPages}>Next</button>
+            <button onClick={()=> onPageChange(currentPage +1)} disabled={currentPage === totalPages} className='cursor-pointer hover:text-pink-500'>Next</button>
         </li>
       </ul>
   )

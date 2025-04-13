@@ -7,6 +7,7 @@ import Profile from './Components/Profile'
 import Footer from './Components/Footer';
 import Job from'./Components/Job';
 import Blogs from './Components/Blogs';
+import BlogDetail from './blog-component/BlogDetail';
 import Notifications from'./Components/Notifications';
 import Settings from './Components/Settings'; 
 import { Route, Routes } from 'react-router-dom';
@@ -23,7 +24,7 @@ const  App=()=>{
         <Route path="/Jobs" element={<Job/>} />
         <Route path="/Profile" element={<Profile />} />
         <Route path="/Blogs" element={<Blogs/>} />
-
+        <Route path="/blog/:id" element={<BlogDetail />} />
         <Route path="/Join" element={<Signup/>} />
         <Route path="/Notifications" element={<Notifications/>} />
 
