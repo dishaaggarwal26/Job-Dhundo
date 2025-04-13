@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from "framer-motion";
 import { FaPlayCircle } from "react-icons/fa";
 import { SlideRight } from '../Utility/Animation';
-
+import {Link} from 'react-router-dom'
 const Content1 = () => {
   return (
     <div className="container mx-auto px-4 md:px-10 min-h-[650px] grid grid-cols-1 md:grid-cols-2 items-center gap-8">
@@ -42,9 +42,9 @@ const Content1 = () => {
           animate='visible'
           className='flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center md:justify-start items-center pt-4'
         >
-          <button className='primary text-white px-6 py-2 rounded-lg bg-pink-600 hover:bg-pink-700 transition'>
+         <Link to="/Join"> <button className='primary cursor-pointer text-white px-6 py-2 rounded-lg bg-pink-600 hover:bg-pink-700 transition'>
             Get Started
-          </button>
+          </button></Link>
           <button className='flex items-center gap-2 font-semibold text-pink-700 hover:text-pink-800 transition'>
             <span className='w-10 h-10 bg-pink-200/20 rounded-full flex justify-center items-center'>
               <FaPlayCircle className='text-2xl' />

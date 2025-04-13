@@ -134,7 +134,7 @@ const SignupLogin = () => {
 
   return (
     <div>
-      <div className="mb-20 mt-20 flex justify-evenly items-center">
+      <div className="mb-20 mt-20  flex justify-evenly items-center">
         {/* Image Section */}
         <motion.div
   className="hidden md:block w-full md:w-1/2"
@@ -153,7 +153,7 @@ const SignupLogin = () => {
 
         {/* Form Section */}
         <motion.div
-          className="mr-10 signup-container w-full md:w-1/2"
+          className=" signup-container w-full  md:w-1/2"
           initial={{ x: 200 }}
           animate={{ x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}

@@ -3,6 +3,8 @@ import Content1 from '../HomeData/Content1'
 import Content2 from '../HomeData/Content2'
 import Content3 from '../HomeData/Content3'
 import Content4 from '../HomeData/Content4'
+import Content5 from '../HomeData/Content5'
+
 import Content6 from '../HomeData/Content6'
 import  FAQ from "../HomeData/FAQ";
 const Home = () => {
@@ -12,6 +14,7 @@ const Home = () => {
       <Content2/>
       <Content3/>
       <Content4/>
+      <Content5/>
 <Content6/>
 <FAQ/>
     </div>

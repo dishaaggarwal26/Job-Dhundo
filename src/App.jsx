@@ -12,12 +12,13 @@ import Notifications from'./Components/Notifications';
 import Settings from './Components/Settings'; 
 import { Route, Routes } from 'react-router-dom';
 import Home from './Components/Home';
+import './App.css';
 import PostCompany from './Components/PostCompany';
 import Help from './Components/help';
 
 const  App=()=>{
   return (
-<main className='overflow-x'>
+<div className='overflow-x-hidden'>
         <Navbar/>
       <ScrollToTop/>
     <Routes>
@@ -36,7 +37,7 @@ const  App=()=>{
         <Route path="/settings" element={<Settings />} />
       </Routes>
       <Footer/>
-</main>
+</div>
   );
 };
 

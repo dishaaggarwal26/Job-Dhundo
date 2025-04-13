@@ -22,7 +22,7 @@ const toggle=(i)=>{
 <p className='text-5xl mt-30 mb-10 text-center text-yellow-700 font-bold font-serif md:text-6xl'>FAQs</p>
     <div className='grid grid-cols-1 md:grid-cols-2 '>
       {data.map((item,i)=>(
-      <div className=' border border-gray-300 m-3  rounded-xl shadow-xl p-4 bg-gray-50 md:h-fit cursor-pointer '>
+      <div  className=' border border-gray-300 m-3  rounded-xl shadow-xl p-4 bg-gray-50 md:h-fit cursor-pointer ' key={item.id}>
    <div className='flex justify-between items-center'onClick={()=>{toggle(i)}} > <p className='text-lg font-semibold ' >{item.question}</p> {select===i?<FaCircleChevronUp/>:<TbTriangleInvertedFilled/>}</div>
     <div className= {select===i?' font-light text-lg ':'hidden'} >{ item.answer}</div>
   </div>))}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { SlideUp } from '../Utility/Animation';
-
+import {Link} from 'react-router-dom'
 const Content3 = () => {
   const Content3data = [
     {
@@ -73,9 +73,10 @@ const Content3 = () => {
             </motion.p>
 
             <div className="flex justify-center lg:justify-start">
-              <button className="bg-pink-600 hover:bg-pink-700 transition text-white px-5 py-2 rounded-lg text-sm sm:text-base">
+             <Link to="/Join"> <button className="bg-pink-600 hover:bg-pink-700 transition text-white px-5 py-2 rounded-lg text-sm sm:text-base">
                 Get Started
               </button>
+              </Link>
             </div>
           </div>
         </div>
