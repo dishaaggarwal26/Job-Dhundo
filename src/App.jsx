@@ -14,7 +14,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './Components/Home';
 import './App.css';
 import PostCompany from './Components/PostCompany';
-import Help from './Components/help';
+import Help from './Components/Help';
 
 const  App=()=>{
   return (
