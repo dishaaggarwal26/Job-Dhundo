@@ -13,6 +13,7 @@ import Settings from './Components/Settings';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Components/Home';
 import PostCompany from './Components/PostCompany';
+import BlogPost from './Components/BlogPost';
 const  App=()=>{
   return (
 <main className='overflow-x'>
@@ -24,6 +25,7 @@ const  App=()=>{
         <Route path="/Jobs" element={<Job/>} />
         <Route path="/Profile" element={<Profile />} />
         <Route path="/Blogs" element={<Blogs/>} />
+        <Route path="/new-blogpost" element={<BlogPost/>} />
         <Route path="/blog/:id" element={<BlogDetail />} />
         <Route path="/Join" element={<Signup/>} />
         <Route path="/Notifications" element={<Notifications/>} />
