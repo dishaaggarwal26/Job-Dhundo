@@ -6,7 +6,7 @@ import { ImCross } from "react-icons/im";
 import '../data.js';
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
 
-import JobCard from './Jobcard.jsx';
+import JobCard from './JobCard.jsx';
 import { JobCategories, JobLocations } from '../data.js';
 import { useState } from 'react';
 const Jobfilter = () => {
