@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { SlideUp } from '../Utility/Animation';
-
+import {Link} from 'react-router-dom'
 const Content3 = () => {
   const Content3data = [
     {
@@ -27,16 +27,14 @@ const Content3 = () => {
       {Content3data.map((item, index) => (
         <div
           key={item.id}
-          className={`grid grid-cols-1 lg:grid-cols-2 items-center gap-y-10 gap-x-12 my-14 ${
-            index % 2 !== 0 ? 'lg:flex-row-reverse' : ''
-          }`}
+          className="grid grid-cols-1 lg:grid-cols-2 items-center gap-y-10 gap-x-12 my-14"
         >
           {/* Image Section */}
           <motion.div
             variants={SlideUp(0.2)}
             initial="hidden"
             whileInView="visible"
-            className="flex justify-center"
+            className={`flex justify-center ${index % 2 !== 0 ? 'lg:order-last' : ''}`}
           >
             <img
               src={item.img}
@@ -75,9 +73,10 @@ const Content3 = () => {
             </motion.p>
 
             <div className="flex justify-center lg:justify-start">
-              <button className="bg-pink-600 hover:bg-pink-700 transition text-white px-5 py-2 rounded-lg text-sm sm:text-base">
+             <Link to="/Join"> <button className="bg-pink-600 hover:bg-pink-700 transition text-white px-5 py-2 rounded-lg text-sm sm:text-base">
                 Get Started
               </button>
+              </Link>
             </div>
           </div>
         </div>

@@ -12,11 +12,14 @@ import Notifications from'./Components/Notifications';
 import Settings from './Components/Settings'; 
 import { Route, Routes } from 'react-router-dom';
 import Home from './Components/Home';
+import './App.css';
 import PostCompany from './Components/PostCompany';
 import BlogPost from './Components/BlogPost';
+import Help from './Components/Help';
+
 const  App=()=>{
   return (
-<main className='overflow-x'>
+<div className='overflow-x-hidden'>
         <Navbar/>
       <ScrollToTop/>
     <Routes>
@@ -26,6 +29,7 @@ const  App=()=>{
         <Route path="/Profile" element={<Profile />} />
         <Route path="/Blogs" element={<Blogs/>} />
         <Route path="/new-blogpost" element={<BlogPost/>} />
+        <Route path="/Help" element={<Help/>} />
         <Route path="/blog/:id" element={<BlogDetail />} />
         <Route path="/Join" element={<Signup/>} />
         <Route path="/Notifications" element={<Notifications/>} />
@@ -35,7 +39,7 @@ const  App=()=>{
         <Route path="/settings" element={<Settings />} />
       </Routes>
       <Footer/>
-</main>
+</div>
   );
 };
 

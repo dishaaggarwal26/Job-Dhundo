@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+body{
+    overflow-x: hidden;
+
+}
+
  .title_logo{ border-radius: 50%;
   object-fit: cover;
   width: 32px; 

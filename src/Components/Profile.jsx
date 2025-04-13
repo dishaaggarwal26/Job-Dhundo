@@ -5,7 +5,7 @@ import { PiBriefcaseBold } from "react-icons/pi";
 import { LuPencil } from "react-icons/lu";
 import { FaPlus } from "react-icons/fa6";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import EditModal from './edit';
+import EditModal from './Edit';
 import EditExperienceModal from './EditExp';
 import EditCertificationModal from './EditCerti';
 import EditEducationModal from './EditEdu';
