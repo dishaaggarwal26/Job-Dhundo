@@ -236,7 +236,7 @@ const SignupLogin = () => {
 
             {action === "Login" && (
               <div className="forgot-password">
-                Lost Password?{" "}
+                Forgot Password?{" "}
                 <span>
                   <Link to="/lost-password" className="hover:underline">
                     Click Here!

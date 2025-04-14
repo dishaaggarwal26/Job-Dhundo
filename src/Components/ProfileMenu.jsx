@@ -42,7 +42,7 @@ const ProfileMenu = ({ closeMenu }) => {
 
                 <li className="flex items-center gap-2 px-4 py-2 font-medium hover:bg-gray-100 cursor-pointer">
                     <FaPlus />
-                    <Link to="/Blogs" onClick={closeMenu}>Create Post</Link>
+                    <Link to="/new-blogpost" onClick={closeMenu}>Create Post</Link>
                 </li>
 
                 <li className="flex items-center gap-2 px-4 py-2 font-medium hover:bg-gray-100 cursor-pointer">
