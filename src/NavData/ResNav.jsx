@@ -5,8 +5,8 @@ import ProfileMenu from '../Components/ProfileMenu'
 import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react";
 import NotificationPanel from '../Components/NotificationPanel'
-import { IoIosNotifications } from "react-icons/io";
 const ResNav = ({ isOpen }) => {
+
   const [openMenu, setOpenMenu] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
 
@@ -32,20 +32,20 @@ const ResNav = ({ isOpen }) => {
             <Link>
              <li className='touch  text-gray-900  hover:text-amber-50' onClick={() => setShowNotification(prev => !prev)} >Notifications</li></Link>
            <Link className='touch  text-gray-900  hover:text-amber-50'  to="/Join"><li>Join-Now</li></Link>
-           <Link  className='touch  text-gray-900  hover:text-amber-50'  to="/ProfileMenu">
-           <li >
-            <button onClick={() => setOpenMenu ((prev) => !prev)}>
+            
+           <li onClick={() => setOpenMenu ((prev) => !prev)}>
+            
             <img className='w-10  rounded-full border-1 cursor-pointer' src={profilePic} alt="Profile" />
-            </button>
-             {openMenu && <ProfileMenu closeMenu={() => setOpenMenu(false)} />}
-          </li></Link>
+          
+          {openMenu && <ProfileMenu  closeMenu={() => setOpenMenu(false)} />}
+          </li>
 
             </ul>
           </div>
 
         </motion.div>
 
-      }
+}
 
 {showNotification && (
   <NotificationPanel  onClose={() => setShowNotification(false)} />

@@ -10,6 +10,7 @@ import EditExperienceModal from './EditExp';
 import EditCertificationModal from './EditCerti';
 import EditEducationModal from './EditEdu';
 import { AnimatePresence } from "framer-motion";
+import ".././index.css";
 
 
 const Profile = () => {
@@ -150,18 +151,28 @@ const Profile = () => {
         <hr className="ml-5 my-5 border-gray-400" />
 
 
-        <div className="w-full flex flex-col lg:flex-row mt-16 px-4 lg:px-12 gap-4">
-          <div className="w-full lg:w-1/3 bg-pink-100 p-4 rounded-xl self-start sticky top-28">
-            <div className="text-2xl font-bold mb-4">Quick Links</div>
-            <ul className="space-y-2 font-semibold ">
-              <li onClick={() => scrollToSection(skillsRef)} className="hover:underline cursor-pointer">Skills</li>
-              <li onClick={() => scrollToSection(experienceRef)} className="hover:underline cursor-pointer">Experience</li>
-              <li onClick={() => scrollToSection(educationRef)} className="hover:underline cursor-pointer">Educations</li>
-              <li onClick={() => scrollToSection(certRef)} className="hover:underline cursor-pointer">Certifications</li>
-              <li onClick={() => scrollToSection(intenshipRef)} className="hover:underline cursor-pointer">Internships</li>
-              <li onClick={() => scrollToSection(resumeRef)} className="hover:underline cursor-pointer">Upload Resume</li>
-            </ul>
-          </div>
+        <div className="w-full flex flex-col lg:flex-row   mt-16 px-4 lg:px-12 gap-4">
+       
+        <div className=" hidden lg:block w-1/3">
+    <div className="sticky top-0 bg-pink-100 p-4 rounded-xl h-fit">
+      <div className="text-2xl font-bold mb-4">Quick Links</div>
+      <ul className="space-y-2 font-semibold">
+        <li onClick={() => scrollToSection(skillsRef)} className="hover:underline cursor-pointer">Skills</li>
+        <li onClick={() => scrollToSection(experienceRef)} className="hover:underline cursor-pointer">Experience</li>
+        <li onClick={() => scrollToSection(educationRef)} className="hover:underline cursor-pointer">Educations</li>
+        <li onClick={() => scrollToSection(certRef)} className="hover:underline cursor-pointer">Certifications</li>
+        <li onClick={() => scrollToSection(resumeRef)} className="hover:underline cursor-pointer">Upload Resume</li>
+      </ul>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
 
           <div className='w-full lg:w-2/3'>
             <div ref={skillsRef} className='p-4  ml-auto bg-pink-100 rounded-2xl scroll-mt-20' >

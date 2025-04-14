@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import BlogsData from './BlogsData.json';
 import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
-
 const BlogDetail = () => {
   const { id } = useParams();
   const blog = BlogsData.find((b) => b.id === parseInt(id));
