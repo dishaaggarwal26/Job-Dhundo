@@ -35,6 +35,7 @@ const App = () => {
         <Route path="/NotificationPanel" element={<NotificationPanel />} />
         <Route path="/Companies" element={<PostCompany />} />
         <Route path="/lost-password" element={<LostPassword />} />
+        <Route path="/reset-password" element={<ResetPassword/>}/>
         <Route path="/settings" element={<Settings />} />
       </Routes>
       <Footer />

@@ -20,25 +20,31 @@ const LostPassword = () => {
 
 // check if the email is valid
   if(!isValidEmail(email)){
-    setError('Please enter a valid email address.')
+    setError('Please enter a valid email address.');
+    return;
   }
 
   setLoading(true);
   try{
     //Simulate API call
-    const response = await fetch('',{
-        method: 'POST',
-        headers: {
-            'content-Type': 'application/json',
-        },
-        body: JSON.stringify({email}),
+    const response = await fetch('http://localhost:8080/auth/check-email', {  
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email }),
     });
 
     if(!response.ok){
         throw new Error('Email not found or server error');
     }
-    const result = await response.json();
-    setMessage(result.message || 'Password reset link sent to your email.');
+    const result = await response.text();
+
+    // Message + Redirect
+    setMessage(result + "! Redirecting...");
+    setTimeout(() => {
+      window.location.href = `/reset-password?email=${email}`;
+    }, 2000);
   }
   catch(error){
     setError(error.message);

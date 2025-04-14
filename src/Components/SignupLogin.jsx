@@ -104,13 +104,13 @@ const SignupLogin = () => {
         setSuccessMessage("Login successful!");
         setGeneralError(""); //clear any previous error
 
-        const isJobSeeker = response.data.isJobSeeker;
+        const isJobSeeker = response.data;
 
         setTimeout(() => {
-          if (isJobSeeker) {
-            navigate("/Job");
+          if (isJobSeeker) { // 1 for job seeker and 0 for recruiter
+            navigate("/");
           } else {
-            navigate("/job-post");
+            navigate("/Jobs");
           }
         }, 1000);
       }
