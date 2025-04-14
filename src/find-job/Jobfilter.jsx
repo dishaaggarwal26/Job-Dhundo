@@ -98,15 +98,15 @@ const matchlocation=job=>SearchFilter.location==="" || job.location.toLowerCase(
 </div>
 
             <section className='w-full lg:w-3/4 text-gray-900 max-lg:px-4'>
-           <div className="flex justify-evenly items-center gap-4"> 
+           <div className="flex justify-between items-center gap-2"> 
             <div>
 
-<h3 className='font-medium  text-3xl py-2' id='job-list'>Latest Jobs</h3>
-<p className='mb-8 text-gray-700'>Get Your desired job from our top companies </p>
+<h3 className='font-medium  text-xl py-2 md:text-3xl' id='job-list'>Latest Jobs</h3>
+<p className='mb-4 w-50 text-sm text-gray-700 md:mb-8 md:w-100 md:text-xl'>Get Your desired job from our top companies </p>
 </div>
 
 <div><Link to="/Companies">
-<button className='flex items-center text-sm cursor-pointer bg-pink-400 py-3 px-2 rounded'><MdAddBox className='font-bold text-2xl text-amber-50'/><span className='ml-1 font-extrabold text-amber-50'>Add-Job</span>
+<button className='flex items-center text-sm py-0.5 cursor-pointer  bg-pink-400 md:py-3 px-2 rounded'><MdAddBox className='font-bold text-sm text-amber-50'/><span className='w-full font-semibold p-0.5  text-amber-50'>Add Job</span>
 </button>
 </Link></div>
 

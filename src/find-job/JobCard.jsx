@@ -1,6 +1,10 @@
 import React from 'react';
+import { useState } from 'react';
+
 
 const JobCard = ({ job }) => {
+
+
   return (
     <div className='w-full max-w-md mx-auto border p-6 shadow rounded bg-white sm:max-w-lg md:max-w-xl lg:max-w-2xl'>
       <div className='flex justify-between items-center'>
@@ -39,9 +43,7 @@ const JobCard = ({ job }) => {
       )}
 
       <div className='flex flex-wrap mt-4 gap-3 text-sm'>
-        <button className='bg-blue-200 hover:bg-blue-300 transition rounded font-semibold px-4 py-2 text-blue-900'>
-          Apply Now
-        </button>
+        <button className='bg-blue-200 hover:bg-blue-300 transition rounded font-semibold px-4 py-2 text-blue-900'>Apply Now</button>
         <button className='bg-pink-200 hover:bg-pink-300 transition rounded font-semibold text-gray-700 px-4 py-2'>
           Know More
         </button>

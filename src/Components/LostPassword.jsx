@@ -20,25 +20,31 @@ const LostPassword = () => {
 
 // check if the email is valid
   if(!isValidEmail(email)){
-    setError('Please enter a valid email address.')
+    setError('Please enter a valid email address.');
+    return;
   }
 
   setLoading(true);
   try{
     //Simulate API call
-    const response = await fetch('',{
-        method: 'POST',
-        headers: {
-            'content-Type': 'application/json',
-        },
-        body: JSON.stringify({email}),
+    const response = await fetch('http://localhost:8080/auth/check-email', {  
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email }),
     });
 
     if(!response.ok){
         throw new Error('Email not found or server error');
     }
-    const result = await response.json();
-    setMessage(result.message || 'Password reset link sent to your email.');
+    const result = await response.text();
+
+    // Message + Redirect
+    setMessage(result + "! Redirecting...");
+    setTimeout(() => {
+      window.location.href = `/reset-password?email=${email}`;
+    }, 2000);
   }
   catch(error){
     setError(error.message);
@@ -52,7 +58,7 @@ const LostPassword = () => {
   return (
     <div className="flex items-center justify-center min-h-screen  bg-purple-100">
       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-2xl shadow-lg">
-        <h2 className="text-2xl font-bold text-center text-pink-600">Lost Password</h2>
+        <h2 className="text-2xl font-bold text-center text-pink-600">Forgot Password</h2>
         {message && <p className="text-green-500 text-center">{message}</p>}
         {error && <p className="text-red-500 text-center">{error}</p>}
         <form className="space-y-4" onSubmit={handleSubmit}>
@@ -78,7 +84,7 @@ const LostPassword = () => {
           </button>
           <p className="text-center text-gray-600">
             Remembered your password?{' '}
-            <a href="/login" className="text-pink-500 hover:underline">
+            <a href="/Join" className="text-pink-500 hover:underline">
               Log In
             </a>
           </p>
