@@ -28,7 +28,8 @@ const ResNav = ({isOpen}) => {
             <Link className='touch  text-gray-900  hover:text-amber-50'  to="/Home"><li >Home</li></Link>
            <Link className='touch  text-gray-900  hover:text-amber-50'  to="/Blogs"> <li>Blogs</li></Link>
            <Link  className='touch  text-gray-900  hover:text-amber-50'  to="/Jobs"><li >Jobs</li></Link>
-             <Link className='touch  text-gray-900  hover:text-amber-50'  to="/Notifications"><li>Notifications</li></Link>
+           <Link  className='touch  text-gray-900  hover:text-amber-50'  to="/Testimonial"><li >Testimonial</li></Link>
+           <Link className='touch  text-gray-900  hover:text-amber-50'  to="/Notifications"><li>Notifications</li></Link>
            <Link className='touch  text-gray-900  hover:text-amber-50'  to="/Join"><li>Join-Now</li></Link>
            <Link  className='touch  text-gray-900  hover:text-amber-50'  to="/ProfileMenu">
            <li >
