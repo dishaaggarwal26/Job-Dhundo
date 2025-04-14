@@ -16,7 +16,7 @@ import './App.css';
 import PostCompany from './Components/PostCompany';
 import BlogPost from './Components/BlogPost';
 import Help from './Components/Help';
-
+import ResetPassword from './Components/ResetPassword';
 const App = () => {
   return (
     <div className='overflow-x-hidden'>
