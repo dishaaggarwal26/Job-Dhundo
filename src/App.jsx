@@ -8,6 +8,7 @@ import Footer from './Components/Footer';
 import Job from'./Components/Job';
 import Blogs from './Components/Blogs';
 import BlogDetail from './blog-component/BlogDetail';
+import Testimonial from './Components/Testimonial';
 import Notifications from'./Components/Notifications';
 import Settings from './Components/Settings'; 
 import { Route, Routes } from 'react-router-dom';
@@ -31,6 +32,7 @@ const  App=()=>{
         <Route path="/new-blogpost" element={<BlogPost/>} />
         <Route path="/Help" element={<Help/>} />
         <Route path="/blog/:id" element={<BlogDetail />} />
+        <Route path="/Testimonial" element={<Testimonial />} />
         <Route path="/Join" element={<Signup/>} />
         <Route path="/Notifications" element={<Notifications/>} />
 

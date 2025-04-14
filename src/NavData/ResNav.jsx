@@ -23,19 +23,20 @@ const ResNav = ({ isOpen }) => {
           <div className='text-xl  bg-pink-300  font-semibold uppercase  rounded text-white py-5'>
 
 
-            <ul className='flex flex-col  text-sm justify-center items-center gap-5'>
-              <Link className='touch  text-gray-900  hover:text-amber-50' to="/Home"><li >Home</li></Link>
-              <Link className='touch  text-gray-900  hover:text-amber-50' to="/Blogs"> <li>Blogs</li></Link>
-              <Link className='touch  text-gray-900  hover:text-amber-50' to="/Jobs"><li >Jobs</li></Link>
-              <Link className='touch  text-gray-900  hover:text-amber-50' to="/Notifications"><li>Notifications</li></Link>
-              <Link className='touch  text-gray-900  hover:text-amber-50' to="/Join"><li>Join-Now</li></Link>
-              <Link className='touch  text-gray-900  hover:text-amber-50' to="/ProfileMenu">
-                <li >
-                  <button onClick={() => setOpenMenu((prev) => !prev)}>
-                    <img className='w-10  rounded-full border-1 cursor-pointer' src={profilePic} alt="Profile" />
-                  </button>
-                  {openMenu && <ProfileMenu closeMenu={() => setOpenMenu(false)} />}
-                </li></Link>
+        <ul className='flex flex-col  text-sm justify-center items-center gap-5'>
+            <Link className='touch  text-gray-900  hover:text-amber-50'  to="/Home"><li >Home</li></Link>
+           <Link className='touch  text-gray-900  hover:text-amber-50'  to="/Blogs"> <li>Blogs</li></Link>
+           <Link  className='touch  text-gray-900  hover:text-amber-50'  to="/Jobs"><li >Jobs</li></Link>
+           <Link  className='touch  text-gray-900  hover:text-amber-50'  to="/Testimonial"><li >Testimonial</li></Link>
+           <Link className='touch  text-gray-900  hover:text-amber-50'  to="/Notifications"><li>Notifications</li></Link>
+           <Link className='touch  text-gray-900  hover:text-amber-50'  to="/Join"><li>Join-Now</li></Link>
+           <Link  className='touch  text-gray-900  hover:text-amber-50'  to="/ProfileMenu">
+           <li >
+            <button onClick={() => setOpenMenu ((prev) => !prev)}>
+            <img className='w-10  rounded-full border-1 cursor-pointer' src={profilePic} alt="Profile" />
+            </button>
+             {openMenu && <ProfileMenu closeMenu={() => setOpenMenu(false)} />}
+          </li></Link>
 
             </ul>
           </div>
