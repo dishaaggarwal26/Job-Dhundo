@@ -9,6 +9,8 @@ export const AppContextProvider =(props)=>{
     })
     const [isSearched,SetIsSearched]=useState(false)
 const [jobs,setjobs]=useState([])
+
+  
 const fetchjob=async()=>{
 setjobs(jobsData)
 }

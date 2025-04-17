@@ -156,12 +156,12 @@ const Content5 = () => {
           </Link>
         </div>
 
-        <footer className="mt-16 text-center text-gray-400 text-xs sm:text-sm">
+        <footer className="mt-16 text-center text-gray-900 text-sm sm:text-sm">
           <p>
             Have a success story to share?{" "}
-            <a href="/submit-testimonial" className="text-blue-400 hover:underline">
+            <Link to="/submit" className="text-blue-800 hover:underline">
               Submit yours
-            </a>
+            </Link>
           </p>
         </footer>
       </div>

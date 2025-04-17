@@ -1,6 +1,7 @@
 import React from 'react';
 import ScrollToTop from './Components/ScrollToTop';
 import Signup from './Components/SignupLogin';
+
 import LostPassword from './Components/LostPassword';
 import Navbar from './Components/Navbar';
 import Profile from './Components/Profile'
@@ -17,6 +18,8 @@ import PostCompany from './Components/PostCompany';
 import BlogPost from './Components/BlogPost';
 import Help from './Components/Help';
 import ResetPassword from './Components/ResetPassword';
+import ShareTestimonial from './HomeData/ShareTestimonial';
+import SignupLogin from './Components/SignupLogin';
 const App = () => {
   return (
     <div className='overflow-x-hidden'>
@@ -30,8 +33,10 @@ const App = () => {
         <Route path="/Blogs" element={<Blogs />} />
         <Route path="/new-blogpost" element={<BlogPost />} />
         <Route path="/Help" element={<Help />} />
+        <Route path="/submit" element={<ShareTestimonial/>} />
+
         <Route path="/blog/:id" element={<BlogDetail />} />
-        <Route path="/Join" element={<Signup />} />
+        <Route path="/Join" element={<SignupLogin/>} />
         <Route path="/Companies" element={<PostCompany />} />
         <Route path="/lost-password" element={<LostPassword />} />
         <Route path="/reset-password" element={<ResetPassword/>}/>

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef,useContext } from "react";
 import ".././SignupLogin.css";
 import { motion } from "framer-motion";
 import user_icon from "../Assets/person.png";
@@ -9,11 +9,14 @@ import { signup, login } from "../api";
 import { Link, useNavigate } from "react-router-dom";
 
 const SignupLogin = () => {
+
+
   const fullNameRef = useRef(null);
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
   const confirmPasswordRef = useRef(null);
 
+  
   const [action, setAction] = useState("Sign Up");
   const [formData, setFormData] = useState({
     fullName: "",
@@ -104,7 +107,7 @@ const SignupLogin = () => {
         setSuccessMessage("Login successful!");
         setGeneralError(""); //clear any previous error
 
-        const isJobSeeker = response.data;
+  
 
         setTimeout(() => {
           if (isJobSeeker) { // 1 for job seeker and 0 for recruiter
@@ -123,13 +126,20 @@ const SignupLogin = () => {
         confirmPassword: "",
       });
       setErrors({});
-    } catch (error) {
-      console.error("API Error:", error.response?.data);
-      setGeneralError(
-        "Error: " + (error.response?.data || "Something went wrong")
-      );
-      setSuccessMessage(""); //clear success if any
-    }
+    } 
+    catch (error) {
+      console.error("Full Error Object:", error);
+    
+      const errorMessage =
+        error.response?.data?.message || error.message || "Something went wrong";
+    
+      setGeneralError("Error: " + errorMessage);
+      setSuccessMessage(""); 
+        }
+    
+
+
+   
   };
 
   return (
@@ -193,6 +203,7 @@ const SignupLogin = () => {
               />
             </div>
             {errors.email && <p className="error">{errors.email}</p>}
+           
 
             <div className="form-group">
               <img

@@ -105,10 +105,14 @@ const matchlocation=job=>SearchFilter.location==="" || job.location.toLowerCase(
 <p className='mb-4 w-50 text-sm text-gray-700 md:mb-8 md:w-100 md:text-xl'>Get Your desired job from our top companies </p>
 </div>
 
-<div><Link to="/Companies">
-<button className='flex items-center text-sm py-0.5 cursor-pointer  bg-pink-400 md:py-3 px-2 rounded'><MdAddBox className='font-bold text-sm text-amber-50'/><span className='w-full font-semibold p-0.5  text-amber-50'>Add Job</span>
-</button>
-</Link></div>
+  <div>
+    <Link to="/Companies">
+      <button className='flex items-center text-sm py-0.5 cursor-pointer bg-pink-400 md:py-3 px-2 rounded'>
+        <MdAddBox className='font-bold text-sm text-amber-50' />
+        <span className='w-full font-semibold p-0.5 text-amber-50'>Add Job</span>
+      </button>
+    </Link>
+  </div>
 
 </div>
             <div className=' grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4'> 
