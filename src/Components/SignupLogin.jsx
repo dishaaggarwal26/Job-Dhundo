@@ -1,4 +1,4 @@
-import React, { useState, useRef,useContext } from "react";
+import React, { useState, useRef } from "react";
 import ".././SignupLogin.css";
 import { motion } from "framer-motion";
 import user_icon from "../Assets/person.png";
@@ -9,14 +9,11 @@ import { signup, login } from "../api";
 import { Link, useNavigate } from "react-router-dom";
 
 const SignupLogin = () => {
-
-
   const fullNameRef = useRef(null);
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
   const confirmPasswordRef = useRef(null);
 
-  
   const [action, setAction] = useState("Sign Up");
   const [formData, setFormData] = useState({
     fullName: "",
@@ -50,6 +47,7 @@ const SignupLogin = () => {
   const validateForm = () => {
     let newErrors = {};
     let focusField = null;
+
     if (action === "Sign Up") {
       const nameParts = formData.fullName.trim().split(" ");
       if (nameParts.length < 2) {
@@ -66,6 +64,7 @@ const SignupLogin = () => {
       newErrors.email = "Invalid email format";
       if (!focusField) focusField = emailRef;
     }
+
     if (!isValidPassword(formData.password)) {
       newErrors.password =
         "Password must be at least 6 characters, include one letter, one number, and one special character.";
@@ -86,6 +85,7 @@ const SignupLogin = () => {
       }
       return;
     }
+
     try {
       if (action === "Sign Up") {
         const response = await signup({
@@ -95,25 +95,32 @@ const SignupLogin = () => {
           confirmPassword: formData.confirmPassword,
           isJobSeeker: formData.userType === "Job Seeker",
         });
+
         console.log("Signup Response:", response.data);
-        setSuccessMessage("Signup successful!");
-        setGeneralError(""); //clear any previous error
+        setSuccessMessage("Signup successful! You can login now.");
+        setGeneralError("");
+
       } else {
         const response = await login({
           email: formData.email,
           password: formData.password,
         });
+
         console.log("Login Response:", response.data);
         setSuccessMessage("Login successful!");
-        setGeneralError(""); //clear any previous error
+        setGeneralError("");
 
-  
+        const isJobSeeker = response.data.isJobSeeker;
 
+        // Optionally store the user type
+        localStorage.setItem("userType", isJobSeeker ? "jobSeeker" : "recruiter");
+
+        // Redirect based on user type
         setTimeout(() => {
-          if (isJobSeeker) { // 1 for job seeker and 0 for recruiter
-            navigate("/");
+          if (isJobSeeker) {
+            navigate("/Home");
           } else {
-            navigate("/Jobs");
+            navigate("/Home");
           }
         }, 1000);
       }
@@ -126,44 +133,35 @@ const SignupLogin = () => {
         confirmPassword: "",
       });
       setErrors({});
-    } 
-    catch (error) {
+    } catch (error) {
       console.error("Full Error Object:", error);
-    
       const errorMessage =
         error.response?.data?.message || error.message || "Something went wrong";
-    
       setGeneralError("Error: " + errorMessage);
-      setSuccessMessage(""); 
-        }
-    
-
-
-   
+      setSuccessMessage("");
+    }
   };
 
   return (
     <div>
-      <div className="mb-20 mt-20  flex justify-evenly items-center">
+      <div className="mb-20 mt-20 flex justify-evenly items-center">
         {/* Image Section */}
         <motion.div
-  className="hidden md:block w-full md:w-1/2"
-  initial={{ x: -200 }}
-  animate={{ x: 0 }}
-  transition={{ duration: 0.6, ease: "easeOut" }}
->
-  <img
-    className="w-full max-w-md h-auto object-contain mx-auto"
-    src={authenticate_img}
-    alt="signuplogo"
-  />
-</motion.div>
-
-
+          className="hidden md:block w-full md:w-1/2"
+          initial={{ x: -200 }}
+          animate={{ x: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <img
+            className="w-full max-w-md h-auto object-contain mx-auto"
+            src={authenticate_img}
+            alt="signuplogo"
+          />
+        </motion.div>
 
         {/* Form Section */}
         <motion.div
-          className=" signup-container w-full  md:w-1/2"
+          className="signup-container w-full md:w-1/2"
           initial={{ x: 200 }}
           animate={{ x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -203,7 +201,6 @@ const SignupLogin = () => {
               />
             </div>
             {errors.email && <p className="error">{errors.email}</p>}
-           
 
             <div className="form-group">
               <img
@@ -271,7 +268,7 @@ const SignupLogin = () => {
               className="signup-button"
               onClick={() => {
                 setAction(action === "Sign Up" ? "Login" : "Sign Up");
-                setErrors({}); // clear errors on mode switch
+                setErrors({});
                 setSuccessMessage("");
                 setGeneralError("");
               }}

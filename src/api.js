@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:8080/auth"; // Adjust if backend runs on a different port
+// const API_BASE_URL = "http://localhost:8080/auth"; // Adjust if backend runs on a different port
+
+const API_BASE_URL = "https://jobdhundo-backend-nl7q.onrender.com/auth";
 
 // Signup API
 export const signup = async (userData) => {
