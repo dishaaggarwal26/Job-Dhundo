@@ -29,8 +29,7 @@ const ResNav = ({ isOpen }) => {
             <Link className='touch text-gray-900  hover:text-amber-50'  to="/Home"><li >Home</li></Link>
            <Link className='touch  text-gray-900  hover:text-amber-50'  to="/Blogs"> <li>Blogs</li></Link>
            <Link  className='touch  text-gray-900  hover:text-amber-50'  to="/Jobs"><li >Jobs</li></Link>
-            <Link>
-             <li className='touch  text-gray-900  hover:text-amber-50' onClick={() => setShowNotification(prev => !prev)} >Notifications</li></Link>
+           <Link className='touch  text-gray-900  hover:text-amber-50'  to="/NotificationPanel"><li>Notifications</li></Link>
            <Link className='touch  text-gray-900  hover:text-amber-50'  to="/Join"><li>Join-Now</li></Link>
             
            <li onClick={() => setOpenMenu ((prev) => !prev)}>

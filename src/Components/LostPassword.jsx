@@ -27,7 +27,7 @@ const LostPassword = () => {
   setLoading(true);
   try{
     //Simulate API call
-    const response = await fetch('http://localhost:8080/auth/check-email', {  
+    const response = await fetch('https://jobdhundo-backend-nl7q.onrender.com/auth/check-email', {  
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
