@@ -253,6 +253,36 @@ const SignupLogin = () => {
               </div>
             )}
 
+            {action === "Sign Up" && (
+              <div className="user-type-container">
+                <label className="text-purple-900">Select User Type:</label>
+                <div className="radio-group">
+                  <label className="text-purple-900">
+                    <input
+                      type="radio"
+                      name="userType"
+                      value="Job Seeker"
+                      className=" accent-pink-600 cursor-pointer "
+                      checked={formData.userType === "Job Seeker"}
+                      onChange={handleChange}
+                    />
+                    Job Seeker
+                  </label>
+                  <label className="text-purple-900">
+                    <input
+                      type="radio"
+                      name="userType"
+                      value="Recruiter"
+                      className=" accent-pink-600 cursor-pointer "
+                      checked={formData.userType === "Recruiter"}
+                      onChange={handleChange}
+                    />
+                    Recruiter
+                  </label>
+                </div>
+              </div>
+            )}
+
             {/* Submit Button */}
             <button
               type="submit"
