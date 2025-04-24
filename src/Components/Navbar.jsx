@@ -9,11 +9,13 @@ import { IoIosNotifications } from "react-icons/io";
 import NotificationPanel from './NotificationPanel'; 
 import ResNav from '../NavData/ResNav';
 
-const Navbar = () => {
+  const Navbar = ({ profileImage }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const [isOpen, setisOpen] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
-
+    
+  
+  
   return (
     <motion.div className='sticky top-0 z-50 opacity-90 bg-pink-200'>
       <div className='flex justify-between p-3 items-center'>
@@ -47,16 +49,25 @@ const Navbar = () => {
             </Link>
 
             <button onClick={() => setOpenMenu((prev) => !prev)}>
-              <img className='w-10 rounded-full border-1 cursor-pointer' src={profilePic} alt="Profile" />
-            </button>
+          
+        <img
+          src={
+            profileImage
+              ? URL.createObjectURL(profileImage)
+              : profilePic
+          }
+          className="h-10 w-10 rounded-full"
+          alt="Profile"
+        />
+         </button>
             {openMenu && <ProfileMenu closeMenu={() => setOpenMenu(false)} />}
           </div>
         </div>
 
         <div className='lg:hidden' onClick={() => setisOpen(!isOpen)}>
           <MdMenu className='text-4xl lg:hidden' />
-          <ResNav isOpen={isOpen} />
-        </div>
+          <ResNav isOpen={isOpen} profileImage={profileImage} />
+          </div>
       </div>
 
       {/* 🔔 Notification Panel with Animation */}
@@ -67,6 +78,6 @@ const Navbar = () => {
       </AnimatePresence>
     </motion.div>
   );
-};
+  }
 
 export default Navbar;
