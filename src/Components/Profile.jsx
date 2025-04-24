@@ -13,35 +13,39 @@ import { AnimatePresence } from "framer-motion";
 import ".././index.css";
 
 
-const Profile = () => {
-  const skillsRef = useRef(null);
+const Profile = ({ profileImage, setProfileImage }) => {
+    const skillsRef = useRef(null);
   const experienceRef = useRef(null);
   const certRef = useRef(null);
   const educationRef = useRef(null);
   const resumeRef = useRef(null);
-  const inputref=useRef(null);
   const bginputref=useRef(null);
+  const[background,setbackground]=useState("")
 
-const[image,setimage]=useState("")
-const[background,setbackground]=useState("")
 
-const handleimgclick=()=>{
-  inputref.current.click();
-}
-const handlebgclick=()=>{
-  bginputref.current.click();
-}
-const handleimgchange=(event)=>{
-  const file=event.target.files[0];
- setimage(event.target.files[0])
+    const inputref = useRef(null);
+  
+    const handleimgclick = () => {
+      inputref.current.click();
+    };
+  
+    const handleimgchange = (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        setProfileImage(file); // lifting state up
+      }
+    };
 
-}
-const handlebgchange=(event)=>{
-  const file=event.target.files[0];
- setbackground(event.target.files[0])
-
-}
-
+   
+    const handlebgclick=()=>{
+      bginputref.current.click();
+    }
+   
+    const handlebgchange=(event)=>{
+      const file=event.target.files[0];
+     setbackground(event.target.files[0])
+    
+    }
   const scrollToSection = (ref) => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -150,9 +154,9 @@ const handlebgchange=(event)=>{
 
 </div>
   <div onClick={handleimgclick}>      
-{image  ?<img className='h-58 w-58 rounded-full -bottom-1/3  absolute left-8 border-mine-shaft-950 border-8 hover: '
-            src={URL.createObjectURL(image)}  alt='Profile' />
-      :<img className='h-58 w-58 rounded-full -bottom-1/3 absolute  left-8 border-mine-shaft-950 border-8 hover: '
+{profileImage ?
+  <img src={URL.createObjectURL(profileImage)} className='h-58 w-58 rounded-full -bottom-1/3 absolute  left-8 border-mine-shaft-950 border-8' />
+:<img className='h-58 w-58 rounded-full -bottom-1/3 absolute  left-8 border-mine-shaft-950 border-8'
             src={profilePic}  alt='Profile' />
         }
 <input type="file" ref={inputref} onChange={handleimgchange} style={{display:'none'}}/>

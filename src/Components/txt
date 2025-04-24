@@ -1,0 +1,18 @@
+ const[background,setbackground]=useState("")
+
+const handleimgclick=()=>{
+  inputref.current.click();
+}
+const handlebgclick=()=>{
+  bginputref.current.click();
+}
+const handleimgchange=(event)=>{
+  const file=event.target.files[0];
+ setimage(event.target.files[0])
+
+}
+const handlebgchange=(event)=>{
+  const file=event.target.files[0];
+ setbackground(event.target.files[0])
+
+}
