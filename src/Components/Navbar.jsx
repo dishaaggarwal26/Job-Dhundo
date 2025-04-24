@@ -66,8 +66,8 @@ import ResNav from '../NavData/ResNav';
 
         <div className='lg:hidden' onClick={() => setisOpen(!isOpen)}>
           <MdMenu className='text-4xl lg:hidden' />
-          <ResNav isOpen={isOpen} />
-        </div>
+          <ResNav isOpen={isOpen} profileImage={profileImage} />
+          </div>
       </div>
 
       {/* 🔔 Notification Panel with Animation */}

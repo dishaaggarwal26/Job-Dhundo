@@ -23,7 +23,7 @@ const App = () => {
   const [profileImage, setProfileImage] = useState(null);
 
   
-  
+
  
   return (
     
@@ -43,7 +43,7 @@ const App = () => {
 
         <Route path="/blog/:id" element={<BlogDetail />} />
         <Route path="/Join" element={<SignupLogin/>} />
-        <Route path="/Companies" element={<PostCompany />} />
+        <Route path="/Companies" element={<PostCompany /> } />
         <Route path="/lost-password" element={<LostPassword />} />
         <Route path="/reset-password" element={<ResetPassword/>}/>
         <Route path="/settings" element={<Settings />} />
