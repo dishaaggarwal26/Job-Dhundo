@@ -19,21 +19,44 @@ const ShareTestimonial = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // You can send `formData` to backend API here
-    console.log('Submitted Data:', formData);
-    alert('Success story submitted!');
-    // Clear form
-    setFormData({
-      name: '',
-      jobRole: '',
-      quote: '',
-      image: null,
-      date: '',
-      details: ''
-    });
+  
+    const formDataToSend = new FormData();
+    formDataToSend.append('name', formData.name);
+    formDataToSend.append('jobRole', formData.jobRole);
+    formDataToSend.append('quote', formData.quote);
+    formDataToSend.append('date', formData.date);
+    formDataToSend.append('rating', 5); // Hardcoding for now
+    formDataToSend.append('details', formData.details);
+    formDataToSend.append('image', formData.image);
+  
+    try {
+      const response = await fetch('https://jobdhundo-backend-nl7q.onrender.com/api/testimonials', {
+        method: 'POST',
+        body: formDataToSend,
+      });
+  
+      if (response.ok) {
+        alert('Success story submitted!');
+        setFormData({
+          name: '',
+          jobRole: '',
+          quote: '',
+          image: null,
+          date: '',
+          details: '',
+        });
+      } else {
+        alert('Failed to submit testimonial');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error submitting testimonial');
+    }
   };
+  
+  
 
   return (
     <div className="max-w-3xl mx-auto p-6 bg-white rounded-2xl shadow-lg mt-10">
@@ -106,7 +129,7 @@ const ShareTestimonial = () => {
         </div>
         <button
           type="submit"
-          className="px-3 bg-pink-600 text-white py-2 rounded-lg hover:bg-pink-600 transition"
+          className="px-3 bg-pink-600 text-white py-2 rounded-lg hover:bg-pink-600 transition cursor-pointer"
         >
           Submit Testimonial
         </button>

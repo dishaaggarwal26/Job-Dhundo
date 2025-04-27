@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import { Link } from "react-router-dom";
@@ -24,54 +24,6 @@ const CustomNextArrow = ({ onClick }) => (
   </button>
 );
 
-const testimonials = [
-  {
-    name: "Aisha Patel",
-    role: "Software Developer at Infosys",
-    quote:
-      "This platform helped me land my dream job within weeks. The process was seamless and efficient.",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
-    date: "March 2024",
-    rating: 5,
-  },
-  {
-    name: "Rohan Mehta",
-    role: "UI/UX Designer at Zomato",
-    quote:
-      "I got hired within days of applying. The curated job listings are exactly what I was looking for.",
-    image: "https://randomuser.me/api/portraits/men/22.jpg",
-    date: "January 2024",
-    rating: 4,
-  },
-  {
-    name: "Sneha Verma",
-    role: "Data Analyst at TCS",
-    quote:
-      "Highly recommend! It connects you with top employers and has a very user-friendly interface.",
-    image: "https://randomuser.me/api/portraits/women/68.jpg",
-    date: "February 2024",
-    rating: 5,
-  },
-  {
-    name: "Karan Shah",
-    role: "Backend Engineer at Paytm",
-    quote:
-      "The job alerts were so personalized and relevant. I didn’t waste any time with irrelevant listings.",
-    image: "https://randomuser.me/api/portraits/men/33.jpg",
-    date: "April 2024",
-    rating: 4,
-  },
-  {
-    name: "Neha Singh",
-    role: "Marketing Specialist at Flipkart",
-    quote:
-      "Great platform! I appreciated the clean interface and great company insights.",
-    image: "https://randomuser.me/api/portraits/women/51.jpg",
-    date: "March 2024",
-    rating: 5,
-  },
-];
-
 const StarRating = ({ rating }) => (
   <div className="flex justify-center space-x-1 text-yellow-400 mb-2">
     {[...Array(5)].map((_, i) => (
@@ -81,7 +33,15 @@ const StarRating = ({ rating }) => (
 );
 
 const Content5 = () => {
+  const [testimonials, setTestimonials] = useState([]);
   const [expanded, setExpanded] = useState(null);
+
+  useEffect(() => {
+    fetch("https://jobdhundo-backend-nl7q.onrender.com/api/testimonials")
+      .then((response) => response.json())
+      .then((data) => setTestimonials(data))
+      .catch((error) => console.error("Error fetching testimonials:", error));
+  }, []);
 
   const settings = {
     dots: false,
@@ -108,10 +68,10 @@ const Content5 = () => {
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 text-white overflow-x-hidden">
       <div className="max-w-6xl mx-auto">
         <header className="text-center mb-12 px-4">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">
+          <h1 className="text-4xl font-extrabold text-gray-900">
             What People Say About Us
           </h1>
-          <p className="text-sm sm:text-base md:text-lg text-pink-700 mt-2">
+          <p className="text-lg text-pink-700 mt-2">
             Real experiences from people who found their dream jobs.
           </p>
         </header>
@@ -123,24 +83,42 @@ const Content5 = () => {
                 <div className="bg-gradient-to-t from-pink-200 to-pink-300 rounded-2xl shadow-lg p-4 sm:p-6 text-center relative h-full">
                   <img
                     loading="lazy"
-                    src={t.image}
+                    src={t.imageUrl}
                     alt={t.name}
                     className="w-16 sm:w-20 h-16 sm:h-20 rounded-full mx-auto mb-4 border-4 border-white object-cover"
                   />
                   <h3 className="text-lg sm:text-xl font-semibold">{t.name}</h3>
-                  <p className="text-xs sm:text-sm text-gray-900">{t.role}</p>
+                  <p className="text-xs sm:text-sm text-gray-900">
+                    {t.jobRole}
+                  </p>
                   <p className="text-xs text-gray-800 mb-2">Hired: {t.date}</p>
                   <StarRating rating={t.rating} />
                   <div className="bg-white text-gray-800 rounded-lg p-3 sm:p-4 mt-4 shadow-inner text-xs sm:text-sm relative">
-                    <span className="absolute text-3xl -top-3 left-4 text-gray-300">“</span>
-                    {expanded === i ? t.quote : `${t.quote.slice(0, 100)}...`}
-                    <span className="absolute text-3xl -bottom-3 right-4 text-gray-300">”</span>
-                    <button
-                      onClick={() => setExpanded(expanded === i ? null : i)}
-                      className="block text-blue-600 text-xs mt-2 hover:underline"
-                    >
-                      {expanded === i ? "Read less" : "Read more"}
-                    </button>
+                    <span className="absolute text-3xl -top-3 left-4 text-gray-300">
+                      “
+                    </span>
+
+                    {expanded === i ? (
+                      <>
+                        <p className="font-semibold mb-2">{t.quote}</p>
+                        <p>{t.details}</p>
+                      </>
+                    ) : (
+                      <p>{`${t.quote.slice(0, 100)}...`}</p>
+                    )}
+
+                    <span className="absolute text-3xl -bottom-3 right-4 text-gray-300">
+                      ”
+                    </span>
+
+                    {t.details.length > 0 && (
+                      <button
+                        onClick={() => setExpanded(expanded === i ? null : i)}
+                        className="block text-blue-600 text-xs mt-2 hover:underline"
+                      >
+                        {expanded === i ? "Read less" : "Read more"}
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
@@ -150,13 +128,13 @@ const Content5 = () => {
 
         <div className="text-center mt-12">
           <Link to="/Jobs">
-            <button className="inline-block bg-pink-600 rounded-xl text-white text-sm sm:text-base md:text-lg px-4 sm:px-6 py-2 sm:py-3">
+            <button className="inline-block bg-pink-600 rounded-xl text-white text-lg px-6 py-3">
               Find Your Job Now
             </button>
           </Link>
         </div>
 
-        <footer className="mt-16 text-center text-gray-900 text-sm sm:text-sm">
+        <footer className="mt-16 text-center text-gray-900 text-sm">
           <p>
             Have a success story to share?{" "}
             <Link to="/submit" className="text-blue-800 hover:underline">
