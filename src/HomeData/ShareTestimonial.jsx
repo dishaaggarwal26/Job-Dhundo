@@ -32,7 +32,7 @@ const ShareTestimonial = () => {
     formDataToSend.append('image', formData.image);
   
     try {
-      const response = await fetch('http://localhost:8080/api/testimonials', {
+      const response = await fetch('https://jobdhundo-backend-nl7q.onrender.com/api/testimonials', {
         method: 'POST',
         body: formDataToSend,
       });

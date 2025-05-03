@@ -37,7 +37,7 @@ const Content5 = () => {
   const [expanded, setExpanded] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/testimonials")
+    fetch("https://jobdhundo-backend-nl7q.onrender.com/api/testimonials")
       .then((response) => response.json())
       .then((data) => setTestimonials(data))
       .catch((error) => console.error("Error fetching testimonials:", error));
