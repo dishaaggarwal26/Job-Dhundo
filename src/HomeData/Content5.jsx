@@ -37,7 +37,7 @@ const Content5 = () => {
   const [expanded, setExpanded] = useState(null);
 
   useEffect(() => {
-    fetch("https://jobdhundo-backend-nl7q.onrender.com/api/testimonials")
+    fetch("http://localhost:8080/api/testimonials")
       .then((response) => response.json())
       .then((data) => setTestimonials(data))
       .catch((error) => console.error("Error fetching testimonials:", error));
@@ -78,7 +78,7 @@ const Content5 = () => {
 
         <div className="relative px-2 sm:px-6">
           <Slider {...settings}>
-            {testimonials.map((t, i) => (
+          {Array.isArray(testimonials) && testimonials.map((t, i) => (
               <div key={i} className="px-2 sm:px-3">
                 <div className="bg-gradient-to-t from-pink-200 to-pink-300 rounded-2xl shadow-lg p-4 sm:p-6 text-center relative h-full">
                   <img
