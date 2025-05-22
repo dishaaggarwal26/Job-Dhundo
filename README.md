@@ -1,12 +1,55 @@
-# React + Vite
+# Job Dhundo - Job Search Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔗 [Live Demo](https://job-dhundo.netlify.app)  
+📂 [Source Code](https://github.com/Deepikabhatt16/JobDhundo)
 
-Currently, two official plugins are available:
+## 🚀 Overview
+Job Dhundo is a responsive job search platform that connects job seekers and recruiters. It offers role-based access, personalized dashboards, job posting, and application tracking features.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
+- **Frontend**: React.js, Tailwind CSS
+- **Backend**: Node.js, Express.js
+- **Database**: PostgreSQL
 
-## Expanding the ESLint configuration
+## ✨ Features
+- Role-based login for Recruiters and Job Seekers
+- Recruiters can post jobs and view applications
+- Job Seekers can search, apply, and track job applications
+- Dynamic profile management for all users
+- Clean and responsive UI with Tailwind CSS
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📷 Screenshots
+*(Add screenshots here if available)*
+
+## 📦 Installation
+1. Clone the repository
+```bash
+git clone https://github.com/Deepikabhatt16/JobDhundo.git
+```
+2. Navigate to the project folder
+```bash
+cd JobDhundo
+```
+3. Install frontend dependencies
+```bash
+cd client
+npm install
+```
+4. Install backend dependencies
+```bash
+cd ../server
+npm install
+```
+5. Run the app
+```bash
+npm start
+```
+
+## 🙋‍♀️ Author
+Deepika Bhatt  
+📧 [deepibhatt03@gmail.com](mailto:deepibhatt03@gmail.com)  
+🌐 [LinkedIn](https://www.linkedin.com/in/deepika-bhatt20/)  
+💻 [GitHub](https://github.com/Deepikabhatt16)
+
+## 📄 License
+This project is open-source and available under the [MIT License](LICENSE).
