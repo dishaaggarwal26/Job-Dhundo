@@ -46,10 +46,10 @@ const Footer = () => {
         <div>
           <h1 className='text-2xl font-extrabold'>Get in Touch</h1>
           <ul className='mt-4 font-bold text-gray-800 space-y-2'>
-            <li>India</li>
-            <li>+012345</li>
-            <li>deepi03@gmail.com</li>
-            <li>9911124378</li>
+            <li><a href="mailto:aggarwaldisha26@gmail.com">aggarwaldisha26@gmail.com</a></li>
+            <li><a href="mailto:deepibhatt03@gmail.com">deepibhatt03@gmail.com</a></li>
+            <li><a href="mailto:pranita2413@gmail.com">pranita2413@gmail.com</a></li>
+            <li><a href="mailto:preetiverma0204@gmail.com">preetiverma0204@gmail.com</a></li>
           </ul>
         </div>
       </div>

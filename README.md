@@ -45,11 +45,13 @@ npm install
 npm start
 ```
 
-## 🙋‍♀️ Author
+## 🙋‍♀️ Team
 Deepika Bhatt  
-📧 [deepibhatt03@gmail.com](mailto:deepibhatt03@gmail.com)  
-🌐 [LinkedIn](https://www.linkedin.com/in/deepika-bhatt20/)  
-💻 [GitHub](https://github.com/Deepikabhatt16)
+📧 [deepibhatt03@gmail.com](mailto:deepibhatt03@gmail.com)
+📧 [aggarwaldisha26@gmail.com](mailto:aggarwaldisha26@gmail.com)
+📧 [preetiverma0204@gmail.com](mailto:preetiverma0204@gmail.com)
+📧 [pranita2413@gmail.com](mailto:pranita2413@gmail.com)
+
 
 ## 📄 License
 This project is open-source and available under the [MIT License](LICENSE).
